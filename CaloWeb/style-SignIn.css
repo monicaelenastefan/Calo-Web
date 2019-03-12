@@ -19,9 +19,36 @@ body{
 }
 
 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
 .rotate {
     animation: rotation 8s infinite linear;
 }
+
+.input_data{
+  font-family: Nova;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin: 100 auto;
+  width: 40%;
+
+
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
 
 
 p{ 
@@ -31,8 +58,8 @@ p{
 }
   
 .container-header {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .container{
