@@ -20,19 +20,9 @@ body{
 
 
 .rotate {
-  animation: rotation 8s infinite linear;
+    animation: rotation 8s infinite linear;
 }
 
-h1{
-    font-family:Nova;
-    color:white;
-    /*background-color:black;*/
-    background-image: linear-gradient(to bottom,black,black,black, #01060e, #3c3d41, #77777b, #b7b7b9, #fcfcfc);
-    height: 66px;
-    position: relative;
-    margin:0;
-    z-index:-1;
-}
 
 p{ 
     font-family:Nova;
@@ -40,7 +30,7 @@ p{
     text-align: center;
 }
   
- .container-header {
+.container-header {
 	width: 80%;
 	margin: 0 auto;
 }
@@ -52,7 +42,7 @@ p{
 }
 
 header {
-  background-color: 144622;
+  background-color: rgb(20,70,34);
 }
 
 header::after {
@@ -90,14 +80,14 @@ nav a {
 }
 
 nav a:hover {
-  color:F2FCF5;
+  color:rgb(242,252,245);
 }
 
 nav a::before {
   content: '';
   display: block;
   height: 5px;
-  background-color:F2FCF5;
+  background-color:rgb(242,252,245);
 
   position: absolute;
   top: 0;
@@ -115,7 +105,7 @@ nav a:hover::before {
     font-family: Nova;
     position: relative;
     text-align: center;
-    color: 144622;
+    color: rgb(20,70,34);
     font-size:60px;
     padding-top:110px;
 }    
@@ -127,8 +117,7 @@ nav a:hover::before {
     color: green;
 }
 
-.description:
-{
+.description{
     font-family: Nova;
     color: green;
     font-size: 30px;
@@ -144,13 +133,13 @@ nav a:hover::before {
     top: 49%;
     left: -3%;
     opacity:0.75;
-    width:550;
-    height:550;
+    width:550px;
+    height:550px;
     margin:-200px 0 0 -200px;
     -webkit-animation:spin 25s linear infinite;
     -moz-animation:spin 25s linear infinite;
     animation:spin 25s linear infinite;
-    z-index =99;
+
 }
 
 .right-wheel {
@@ -159,16 +148,14 @@ nav a:hover::before {
     top: 49%;
     right: -15%;
     opacity:0.75;
-    width:550;
-    height:550;
+    width:550px;
+    height:550px;
     margin:-200px 0 0 -200px;
     -webkit-animation:spin 25s linear infinite;
     -moz-animation:spin 25s linear infinite;
     animation:spin 25s linear infinite;
-    z-index =99;
+    
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-}
