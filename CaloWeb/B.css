@@ -1,0 +1,174 @@
+
+@font-face {
+    font-family: Nova;
+    src: url("Nova.otf") format("opentype");
+}
+
+
+
+
+
+body{
+    
+    background-color: white;
+    background-size:     cover;                  
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    margin:0;    
+   
+}
+
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+h1{
+    font-family:Nova;
+    color:white;
+    /*background-color:black;*/
+    background-image: linear-gradient(to bottom,black,black,black, #01060e, #3c3d41, #77777b, #b7b7b9, #fcfcfc);
+    height: 66px;
+    position: relative;
+    margin:0;
+    z-index:-1;
+}
+
+p{ 
+    font-family:Nova;
+    font-size:40px;
+    text-align: center;
+}
+  
+ .container-header {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.container{
+    position: relative;
+    text-align: center;
+
+}
+
+header {
+  background-color: 144622;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 60px;
+  padding-top: 23px;
+  
+  position: relative;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  
+}
+
+nav a:hover {
+  color:F2FCF5;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color:F2FCF5;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+
+.center-text{
+    font-family: Nova;
+    position: relative;
+    text-align: center;
+    color: 144622;
+    font-size:60px;
+    padding-top:110px;
+}    
+
+.sub-title{
+    font-family: Nova;
+    position: relative;
+    text-align: center;
+    color: green;
+}
+
+.description:
+{
+    font-family: Nova;
+    color: green;
+    font-size: 30px;
+}
+
+.logo-page{
+  padding-top: 70px;
+}   
+  
+.left-wheel {
+    position: fixed;
+    content: url(wheel1.5.png);
+    top: 49%;
+    left: -3%;
+    opacity:0.75;
+    width:550;
+    height:550;
+    margin:-200px 0 0 -200px;
+    -webkit-animation:spin 25s linear infinite;
+    -moz-animation:spin 25s linear infinite;
+    animation:spin 25s linear infinite;
+    z-index =99;
+}
+
+.right-wheel {
+    position: fixed;
+    content: url(wheel1.5.png);
+    top: 49%;
+    right: -15%;
+    opacity:0.75;
+    width:550;
+    height:550;
+    margin:-200px 0 0 -200px;
+    -webkit-animation:spin 25s linear infinite;
+    -moz-animation:spin 25s linear infinite;
+    animation:spin 25s linear infinite;
+    z-index =99;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+}
