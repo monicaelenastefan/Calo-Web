@@ -112,27 +112,7 @@ nav a:hover::before {
 
 }    
 
-.sub-title{
-    font-family: Nova;
-    position: relative;
-    text-align: center;
-    color: green;
-    
-}
-
-.description{
-    font-family: Nova;
-    color: green;
-    font-size: 30px;
-    width:600;
-    height:100;
-    margin:auto;
-
-}
-
-.logo-page{
-  padding-top: 70px;
-}   
+ 
   
 .left-wheel {
     position: fixed;
