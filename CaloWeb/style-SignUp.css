@@ -4,10 +4,6 @@
     src: url("Nova.otf") format("opentype");
 }
 
-
-
-
-
 body{
     
     background-color: white;
@@ -31,13 +27,85 @@ p{
 }
   
 .container-header {
-	width: 80%;
-	margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .container{
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: left;
+  font-family: Nova;
+}
+
+.input_data{
+  font-family: Nova;
+  text-align: center;
+  margin: 28px auto;
+  width: 40%;
+}
+
+.details
+{
+  font-family: Nova;
+  padding: 5px;
+  text-align: center;
+  width:115%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item
+{
+  padding-right: 5px;
+  text-align: center;
+}
+
+input[type=text]
+{
+  width: 115%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;
+}
+
+input[type=number]
+{
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;
+}
+
+input[type=email]
+{
+  width: 115%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;
+}
+
+input[type=password]
+{
+  width: 115%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;
+}
+
+input[type=submit]
+{
+  width: 100px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;  
+  background-color: rgb(20,70,34);
+  color: white;
+  font-family: Nova;
 
 }
 
@@ -101,51 +169,6 @@ nav a:hover::before {
 }
 
 
-.center-text{
-    font-family: Nova;
-    position: center;
-    text-align: center;
-    color: rgb(20,70,34);
-    font-size:60px;
-    padding-top:110px;
-    
-
-}    
-
- 
-  
-.left-wheel {
-    position: fixed;
-    content: url(wheel1.5.png);
-    top: 49%;
-    left: -3%;
-    opacity:0.75;
-    width:550px;
-    height:550px;
-    margin:-200px 0 0 -200px;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
-    animation:spin 25s linear infinite;
-    z-index:-1;
-
-}
-
-.right-wheel {
-    position: fixed;
-    content: url(wheel1.5.png);
-    top: 49%;
-    right: -15%;
-    opacity:0.75;
-    width:550px;
-    height:550px;
-    margin:-200px 0 0 -200px;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
-    animation:spin 25s linear infinite;
-    z-index:-1;
-    
-}
-
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
@@ -160,7 +183,7 @@ nav li {
 
 nav a{ 
 font-size: 20px;}
-
+}
 .container-header{
     margin-bottom:0px;
 }
@@ -172,11 +195,7 @@ font-size: 20px;}
   padding-top: 15px;
   padding-bottom:0px;
   
-}
-    
-   
-  
-        
+}      
         
 }
 
