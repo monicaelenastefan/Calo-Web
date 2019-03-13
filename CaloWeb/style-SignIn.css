@@ -35,7 +35,7 @@ input[type=text] {
   border-radius: 5px;
   padding: 20px;
   text-align: center;
-  margin: 100 auto;
+  margin: 100px auto;
   width: 40%;
 
 
@@ -129,7 +129,7 @@ nav a:hover::before {
 
 .center-text{
     font-family: Nova;
-    position: center;
+    position: relative;
     text-align: center;
     color: rgb(20,70,34);
     font-size:60px;
@@ -190,7 +190,7 @@ font-size: 20px;}
 .container-header{
     margin-bottom:0px;
 }
-
+}
 @media screen and (max-width: 800px){
     nav li {
   margin-left: 10px;
@@ -219,3 +219,4 @@ font-size: 20px;}
     font-size:18px;}
         
 }
+
