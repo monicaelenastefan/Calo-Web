@@ -9,11 +9,8 @@ body{
    
     margin:0;
     bottom: 0;
-    
- background-image: linear-gradient(to right,#43C6AC ,#F8FFAE);
-   
+background-image: linear-gradient(to bottom, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #c6e1c0, #b5d2b0, #a4c3a0, #7fa27e, #5c825d, #39633f, #144622);ackground-image: linear-gradient(to bottom, #144622, #39633f, #5c825d, #7fa27e, #a4c3a0, #b5d2b0, #c6e1c0, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0);
 }
-
 .container-header 
 {
   width: 80%;
