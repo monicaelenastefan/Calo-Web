@@ -3,20 +3,14 @@
     src: url("Nova.otf") format("opentype");
 }
 
-html{
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
 
+html { overflow-y : hidden;}
 body{
+   
+    margin:0;
+    bottom: 0;
     
-    background-color: white;
-    background-size:     cover;                  
-    background-repeat:   no-repeat;
-    background-position: center center;  
-    margin:0;   
-    width:100%;
-    height:100%;
+ background-image: linear-gradient(to right,#43C6AC ,#F8FFAE);
    
 }
 
@@ -24,48 +18,48 @@ body{
 {
   width: 80%;
   margin: 0 auto;
+  z-index: -1;
+  height:5vh;
 }
- .container {
 
-  position: absolute;
-
-  bottom : 0px;
-  
-  overflow-x: hidden;
-   overflow-y: hidden;
-   height: auto;
-}
  .lists {
-    bottom: 0;
-   display: flex;
-   overflow-y: hidden;
-   height: 600px;
-   position: relative;
+     
+    display:flex;
+    height:95vh;
+   overflow-x:auto;
+overflow-y: hidden;
+    flex-wrap: nowrap;
+  bottom:0;
+ 
 
 }
  .lists > * {
    flex: 0 0 auto;
    margin-left: 10px;
    margin-bottom: 30px;
+   flex-wrap:nowrap;
+   bottom:0px;
 
 }
- .lists::after {
-   content: '';
-   flex: 0 0 10px;
-}
+ 
  .list {
+
    width: 300px;
-   height: auto;
-   position: relative;
+   margin-bottom:40px;
+   position: static;
    margin-bottom: 0;
+   bottom:0px;
+   
 }
  .list > * {
    background-color: #e2e4e6;
    color: #333;
    padding: 0 10px;
-   bottom: 0;
+  
+   opacity:0.9;
 }
  .list header {
+     margin-top:40px;
    line-height: 36px;
    font-size: 16px;
    font-weight: bold;
@@ -82,12 +76,13 @@ body{
  .list ul {
    list-style: none;
    margin: 0;
-
+   
    position: relative;
    object-fit: fill;
    max-height: 100%;
  }
  .list ul li {
+   font-size:20px;
    background-color: #fff;
    padding: 10px;
    border-radius: 3px;
@@ -99,6 +94,7 @@ body{
 }
 header {
   background-color: rgb(20,70,34);
+  margin-top:0px;
 }
 
 header::after {
