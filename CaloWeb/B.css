@@ -33,17 +33,30 @@ p{
 .container-header {
 	width: 80%;
 	margin: 0 auto;
+    
+   
 }
 
 .container{
-    position: relative;
-    margin-bottom:0px;
+    
+    height:100%;
     text-align:center;
+    overflow: hidden;
+    position:fixed;
+    width:100%;
+    margin:auto;
+}
 
+.container-empty-space{
+    position: relative;
+    height:100px;
 }
 
 header {
   background-color: rgb(20,70,34);
+ 
+  margin:  auto;
+  
 }
 
 header::after {
@@ -51,7 +64,6 @@ header::after {
   display: table;
   clear: both;
 }
-
 
 
 nav {
@@ -105,21 +117,22 @@ nav a:hover::before {
 
 .center-text{
     font-family: Nova;
-    position: center;
-    text-align: center;
+    content: center;
+    width:700px;
+    height:60px;
     color: rgb(20,70,34);
     font-size:60px;
-    padding-top:110px;
-    margin-left:5px;
-    margin-right:5px;
+    
+    margin:auto;
     background-color:rgba(255,255,255,0.9)  ;
 
 }    
 
 .sub-title{
     font-family: Nova;
-    position: relative;
-    text-align: center;
+    font-size: 25px;
+    width:650;
+    height:50;
     color: green;
     margin:auto;
     background-color:rgba(255,255,255,0.92)  ;
@@ -139,18 +152,19 @@ nav a:hover::before {
 .logo-page{
   padding-top: 70px;
   margin: auto;
+  bottom:0;
   
 }   
   
 .left-wheel {
     position: fixed;
     content: url(wheel1.5.png);
-    top: 49%;
-    left: -3%;
+    top:20%;
+    left:-225px;
     opacity:0.75;
     width:550px;
     height:550px;
-    margin:-200px 0 0 -200px;
+    margin-left:0%;
     -webkit-animation:spin 25s linear infinite;
     -moz-animation:spin 25s linear infinite;
     animation:spin 25s linear infinite;
@@ -161,12 +175,12 @@ nav a:hover::before {
 .right-wheel {
     position: fixed;
     content: url(wheel1.5.png);
-    top: 49%;
-    right: -15%;
+    top:20%;
+    right: -225px;
     opacity:0.75;
     width:550px;
     height:550px;
-    margin:-200px 0 0 -200px;
+    margin-right:0%;
     -webkit-animation:spin 25s linear infinite;
     -moz-animation:spin 25s linear infinite;
     animation:spin 25s linear infinite;
