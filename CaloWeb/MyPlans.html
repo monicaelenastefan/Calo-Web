@@ -1,13 +1,15 @@
+<!DOCTYPE html>
+<html>
 <head>
-
-    <link rel="stylesheet" href="style-SignIn.css">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="dialog.css">
+<link rel="stylesheet" href="style-MyPlans.css">
+<script src="dialog.js"></script>
 
 </head>
-
-
 <body>
 
-<header>
+    <header>
      <div class="container-header">
      
         <nav>
@@ -24,13 +26,24 @@
         
   
 </header>
+
 <div class="container">
 
         <div class="center-text">Your Plans!</div>
 
-        <
-    
+        
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
 </div>
 
 
+
+<button onclick="Prompt.render('Type some text:' ,'changeText')">Add Plan</button>
+</div>
 </body>
+</html>
