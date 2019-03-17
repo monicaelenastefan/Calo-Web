@@ -10,7 +10,7 @@
 
 body{
     
-    background-color: white;
+    background-color: #D7F1D0;
     background-size:     cover;                  
     background-repeat:   no-repeat;
     background-position: center center;  
@@ -124,7 +124,7 @@ nav a:hover::before {
     font-size:60px;
     
     margin:auto;
-    background-color:rgba(255,255,255,0.9)  ;
+    background-color:#D7F1D0  ;
 
 }    
 
@@ -135,7 +135,8 @@ nav a:hover::before {
     height:50;
     color: green;
     margin:auto;
-    background-color:rgba(255,255,255,0.92)  ;
+    background-color:#D7F1D0  ;
+
 }
 
 .description{
@@ -145,8 +146,8 @@ nav a:hover::before {
     width:600;
     height:100;
     margin:auto;
-    background-color:rgba(255,255,255,0.9)  ;
-
+    background-color:#D7F1D0  ;
+   
 }
 
 .logo-page{
