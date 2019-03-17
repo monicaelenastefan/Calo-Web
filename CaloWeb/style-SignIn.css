@@ -19,7 +19,7 @@ body{
 }
 
 
-input[type=submit]
+input[type=button]
 {
   width: 100px;
   padding: 10px 20px;
@@ -67,11 +67,6 @@ input[type=password] {
 
 
 
-p{ 
-    font-family:Nova;
-    font-size:40px;
-    text-align: center;
-}
   
 .container-header {
   width: 80%;
