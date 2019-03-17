@@ -3,101 +3,96 @@
     src: url("Nova.otf") format("opentype");
 }
 
-body
-{
+html{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body{
+    
     background-color: white;
     background-size:     cover;                  
     background-repeat:   no-repeat;
     background-position: center center;  
     margin:0;    
-  	font-family: 'Nava';
-  	font-size: 14px;
-  	line-height: 1.3em;
-  	height: 100%;
    
 }
+
 .container-header 
 {
   width: 80%;
   margin: 0 auto;
 }
- .ui {
-	 height: auto;
-	 display: grid;
-	 grid-template-rows: 40px 50px 1fr;
-	 background-color: white;
-	 color: #eee;
-}
- .navbar {
-	 padding-left: 0px;
-	 display: flex;
-	 align-items: center;
-}
- .navbar.app {
-	 background-color: white;
-	 font-size: 0rem;
-}
- .navbar.board {
-	 font-size: 0rem;
+ .container {
+
+  position: static;
+  margin-bottom:0px;
+  overflow-x: hidden;
+   overflow-y: hidden;
+   height: auto;
 }
  .lists {
-	 display: flex;
-	 overflow-y: auto;
+  bottom: 0;
+   display: flex;
+   overflow-y: hidden;
+   height: 600px;
+   position: relative;
+
 }
  .lists > * {
-	 flex: 0 0 auto;
-	 margin-left: 10px;
+   flex: 0 0 auto;
+   margin-left: 10px;
+   margin-bottom: 30px;
+
 }
  .lists::after {
-	 content: '';
-	 flex: 0 0 10px;
+   content: '';
+   flex: 0 0 10px;
 }
  .list {
-	 width: 300px;
-	 height: 100%;
+   width: 300px;
+   height: auto;
+   position: relative;
+   margin-bottom: 0;
 }
  .list > * {
-	 background-color: #e2e4e6;
-	 color: #333;
-	 padding: 0 10px;
+   background-color: #e2e4e6;
+   color: #333;
+   padding: 0 10px;
+   bottom: 0;
 }
  .list header {
-	 line-height: 36px;
-	 font-size: 16px;
-	 font-weight: bold;
-	 border-top-left-radius: 5px;
-	 border-top-right-radius: 5px;
+   line-height: 36px;
+   font-size: 16px;
+   font-weight: bold;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
 }
  .list footer {
-	 line-height: 36px;
-	 border-bottom-left-radius: 5px;
-	 border-bottom-right-radius: 5px;
-	 color: #888;
+   line-height: 36px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   color: #888;
+   bottom: 0;
 }
  .list ul {
-	 list-style: none;
-	 margin: 0;
-	 max-height: calc(100% - 36px - 36px);
-	 overflow-y: scroll;
-	 object-fit: fill;
-}
+   list-style: none;
+   margin: 0;
+   overflow-y: scroll;
+   position: relative;
+   object-fit: fill;
+   max-height: 70%;
+ }
  .list ul li {
-	 background-color: #fff;
-	 padding: 10px;
-	 border-radius: 3px;
-	 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+   background-color: #fff;
+   padding: 10px;
+   border-radius: 3px;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
  .list ul li:not(:last-child) {
-	 margin-bottom: 10px;
+   margin-bottom: 10px;
+
 }
- .list ul li img {
-	 display: block;
-	 width: calc(100% + 2 * 10px);
-	 margin: -10px 0 10px -10px;
-	 border-top-left-radius: 3px;
-	 border-top-right-radius: 3px;
-}
- 
 header {
   background-color: rgb(20,70,34);
 }
@@ -173,10 +168,6 @@ nav li {
 nav a{ 
 font-size: 20px;}
 }
-.container-header{
-    margin-bottom:0px;
-}
-
 @media screen and (max-width: 800px){
     nav li {
   margin-left: 10px;
