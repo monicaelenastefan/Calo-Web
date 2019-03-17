@@ -4,17 +4,11 @@
     src: url("Nova.otf") format("opentype");
 }
 
-html
-{
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
 body
 {    
   background-color: white;
-  background-size:     cover;                  
-  background-repeat:   no-repeat;
+  background-size: cover;                  
+  background-repeat: no-repeat;
   background-position: center center;  
   margin:0;      
 }
@@ -28,10 +22,74 @@ body
 .container 
 {
   position: static;
-  margin-bottom:0px;
+  margin-bottom: 0px;
   overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
+  text-align: center;
+}
+
+p
+{ 
+  font-family: Nova;
+  font-size: 20px;
+  text-align: center;
+}
+
+.edit_data
+{
+  font-family: Nova;
+  text-align: center;
+  margin: auto auto;
+  width: 100%;
+}
+
+.SaveButton
+{
+  width: 100px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;  
+  background-color: rgb(20,70,34);
+  color: white;
+  font-family: Nova;
+}
+
+input[type=text]
+{
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;
+}
+
+input[type=number]
+{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: 3px solid #555;
+}
+
+input[type=email]
+{
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;
+}
+
+input[type=password]
+{
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;
 }
 
 header 
