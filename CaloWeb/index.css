@@ -80,15 +80,23 @@ overflow-y: hidden;
  }
  .list ul li {
    font-size:20px;
+   font-family: Nova;
    background-color: #fff;
    padding: 10px;
    border-radius: 3px;
    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+   cursor:pointer;
 }
  .list ul li:not(:last-child) {
    margin-bottom: 10px;
 
 }
+
+.list ul li:hover {
+   background: gray;
+  color: white;
+}
+
 header {
   background-color: rgb(20,70,34);
   margin-top:0px;
