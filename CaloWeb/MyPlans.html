@@ -7,16 +7,19 @@
 <script src="dialog.js"></script>
 <script>
 function changeText(val){
-    document.getElementById('status').innerHTML = val;
+  var btn = document.createElement("BUTTON");        // Create a <button> element
+  var t = document.createTextNode("CLICK ME");       // Create a text node
+  btn.appendChild(t);                                // Append the text to <button>
+  document.body.appendChild(btn); 
+
 }
 function doStuff(val){
-    document.body.style.background = val;
+  document.body.style.background = val;
 }
 </script>
 </head>
 <body>
-
-    <header>
+  <header>
      <div class="container-header">
      
         <nav>
@@ -33,13 +36,11 @@ function doStuff(val){
         
   
 </header>
-
 <div class="container">
 
         <div class="center-text">Your Plans!</div>
-
-        
-<div id="dialogoverlay"></div>
+        <button onclick="Prompt.render('Type some text:','changeText')">Add Plan</button>
+        <div id="dialogoverlay"></div>
 <div id="dialogbox">
   <div>
     <div id="dialogboxhead"></div>
@@ -47,10 +48,8 @@ function doStuff(val){
     <div id="dialogboxfoot"></div>
   </div>
 </div>
-
-
-
-<button onclick="Prompt.render('Type some text:' ,'changeText')">Add Plan</button>
 </div>
+
+
 </body>
 </html>
