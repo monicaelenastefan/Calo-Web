@@ -26,20 +26,39 @@ body
   overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
+  display: grid;
+  grid-template-columns: auto auto;
   text-align: center;
 }
 
-p
+.static
 { 
   font-family: Nova;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
+}
+
+.optional
+{
+  font-family: Nova;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 20px;
 }
 
 .edit_data
 {
   font-family: Nova;
-  text-align: center;
+  text-align: left;
+  margin: auto auto;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.personal_data
+{
+  font-family: Nova;
+  text-align: right;
   margin: auto auto;
   width: 100%;
 }
@@ -56,9 +75,23 @@ p
   font-family: Nova;
 }
 
+.input_right
+{
+  text-align: left;
+  margin-left: 20px;
+  height: 50%;
+}
+
+.input_right1
+{
+  text-align: left;
+  margin-left: 20px;
+  height: 50%;
+}
+
 input[type=text]
 {
-  width: 40%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -76,7 +109,7 @@ input[type=number]
 
 input[type=email]
 {
-  width: 40%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -85,7 +118,7 @@ input[type=email]
 
 input[type=password]
 {
-  width: 40%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
