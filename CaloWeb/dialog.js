@@ -62,7 +62,7 @@ function CustomPrompt(){
 		dialogoverlay.style.display = "block";
 	    dialogoverlay.style.height = winH+"px";
 		dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-	    dialogbox.style.top = "0px";
+	    dialogbox.style.top = "50px";
 	    dialogbox.style.display = "block";
 		document.getElementById('dialogboxhead').innerHTML = "A value is required";
 	    document.getElementById('dialogboxbody').innerHTML = "Start Date";
