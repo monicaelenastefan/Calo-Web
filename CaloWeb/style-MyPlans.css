@@ -49,9 +49,9 @@ body{
 
 .container-create-button{
     height:70px;
-    width:170px;
+    width:190px;
     margin:auto;
-    
+    position:relative;
     
     margin-top:40px;
 
@@ -59,9 +59,9 @@ body{
    
 }
 #create-button{
-    
+    width:100%;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 27px;
     color:rgb(20,70,34,0.8);
     font-family: Nova;
     height:70px;
@@ -90,20 +90,29 @@ body{
     align-items: center;
     justify-content: center;
     
-    margin: auto;
-    border: 2px solid red;
 }
 
 
 
 
 
-.container-plans ul{
-    height:100px;
-    width:100px;
-    background-color:white;
-    border: 2px solid blue;
-    position:relative;
+.plan{
+    
+   
+    border: 2px solid rgb(20,70,34);
+    height:17vh;
+    width:25vh;
+     font-size: 27px;
+    color:rgb(20,70,34,1);
+    font-family: Nova;
+    text-align:center;
+      background-color:rgb(20,70,34,0.3);
+    margin-left:5px;
+    margin-right:5px;
+   display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
     
 }
 
@@ -197,6 +206,25 @@ nav a:hover::before {
     display:none;
 }
 
+.plan-modal{
+      width:100%;
+    height:100vh;
+    background-color:rgba(0,0,0,0.7);
+    left:0;
+    bottom:0;
+    top:0 ;
+    position: absolute;
+    position: absolute;
+    left:0;
+    overflow:hidden;
+    z-index:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    display:none;
+    
+    }
+
 .modal-content{
     width:700px;
     height:500px;
@@ -205,6 +233,18 @@ nav a:hover::before {
     text-align:center;
     padding:10px;
     position:relative;
+}
+
+.close-plan{
+    
+    position:absolute;
+    font-size:40px;
+    right:15px;
+    top:0;
+    margin-right:14 px;
+    font-size:30 px;
+    transform: rotate(45deg);
+    cursor:pointer;
 }
 
 

@@ -39,12 +39,9 @@
 
    <div class="container-plans">
          
-          <ul>
-          </ul>
-        <ul>
-          </ul>
-          <ul>
-          </ul>
+          <div class="plan">Sample</div>
+         <div class="plan">Sample</div>
+          <div class="plan">Sample</div>
      </div>  
 
 </div>
@@ -58,6 +55,16 @@
     
     </div>
 </div>
+
+    <div class="plan-modal">
+    <div class="modal-content">
+    ana
+    <div class="close-plan">+</div>
+    
+    
+    
+    </div>
+    </div>
  <script>
     var list= document.getElementById("create-button");
     tab= [];
@@ -69,10 +76,26 @@
 });//}
 
     document.querySelector('.close').addEventListener('click', 
+  function(){
+   document.querySelector('.bg-modal').style.display= 'none';
+   
+   });
+    
+    var plan=document.querySelectorAll(".plan");
+    
+   for ( var i = 0; i< plan.length ; i++){
+        plan[i].addEventListener('click', function() {
+    
+   document.querySelector('.plan-modal').style.display= 'flex'; 
+});//}
+ }   
+     document.querySelector('.close-plan').addEventListener('click', 
     function(){
-    document.querySelector('.bg-modal').style.display= 'none';
+    document.querySelector('.plan-modal').style.display= 'none';
     
     });
+    
+  
     
     </script>
 
