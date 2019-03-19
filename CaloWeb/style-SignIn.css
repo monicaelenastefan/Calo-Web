@@ -183,6 +183,19 @@ nav a:hover::before {
     
 }
 
+@media only screen and (max-width: 1100px) {
+  /* For tablets: */
+  .left-wheel{opacity: 10;}
+  .right-wheel{opacity: 10;}  
+}
+
+
+@media only screen and (max-width: 1000px) {
+  /* For tablets: */
+  .left-wheel{opacity: 10;}
+  .right-wheel{opacity: 10;}  
+}
+
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
