@@ -4,19 +4,8 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="dialog.css">
 <link rel="stylesheet" href="style-MyPlans.css">
-<script src="dialog.js"></script>
-<script>
-function changeText(val){
-  var btn = document.createElement("BUTTON");        // Create a <button> element
-  var t = document.createTextNode("CLICK ME");       // Create a text node
-  btn.appendChild(t);                                // Append the text to <button>
-  document.body.appendChild(btn); 
 
-}
-function doStuff(val){
-  document.body.style.background = val;
-}
-</script>
+
 </head>
 <body>
   <header>
@@ -25,10 +14,12 @@ function doStuff(val){
         <nav>
             <ul>
             <li><a href="">My Profile</a><li>
-            <li><a href="">Timeline</a><li>
-            <li><a href="">MyPlans</a><li>
+            <li><a href="index.html">Timeline</a><li>
+            <li><a href="MyPlans.html">MyPlans</a><li>
             <li><a href="Calo-Web.html">Sign Out</a><li>
-            <li><a>Username</a><li>
+            <div class="Username">Username </div>
+             
+           
              
            
             </ul>
@@ -39,9 +30,15 @@ function doStuff(val){
 </header>
 <div class="container">
 
-        <div class="center-text">Your Plans!</div>
-        <button onclick="Prompt.render('Type some text:','changeText')">Add Plan</button>
-        <div id="dialogoverlay"></div>
+     <div class="container-create-button"></div>
+
+   <div class="container-plans">
+         
+          <ul>
+          </ul>
+        <ul>
+          </ul>
+     </div>  
 <div id="dialogbox">
   <div>
     <div id="dialogboxhead"></div>

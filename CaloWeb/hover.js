@@ -1,8 +1,8 @@
 startList = function() {
 if (document.all&&document;.getElementById) {
-navRoot = document.getElementById("nav");
+navRoot = document.getElementById(".list");
 for (i=0; i;
-if (node.nodeName=="LI") {
+if (node.nodeName=="li") {
 node.onmouseover=function() {
 this.className+=" over";
   }
