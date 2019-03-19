@@ -23,9 +23,12 @@ body{
 
 
 .container-header {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+
   height: 5vh;
+  display:flex;
+  align-items: center;
+    justify-content:center;
 }
 
 .container{
@@ -55,7 +58,7 @@ body{
     
    
 }
-.create-button{
+#create-button{
     
     text-transform: uppercase;
     font-size: 30px;
@@ -70,6 +73,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
+     border-radius:4px;
 }
 
 .create-button:hover {
@@ -105,6 +109,8 @@ body{
 
 header {
   background-color: rgb(20,70,34);
+  position: relative;
+  height:5vh;
 }
 
 header::after {
@@ -115,6 +121,8 @@ header::after {
 
 nav {
   text-align:center;
+  position: absolute;
+  
 }
 
 nav ul {
@@ -171,6 +179,47 @@ nav a:hover::before {
 
 }    
 
+.bg-modal {
+    width:100%;
+    height:100vh;
+    background-color:rgba(0,0,0,0.7);
+    left:0;
+    bottom:0;
+    top:0 ;
+    position: absolute;
+    position: absolute;
+    left:0;
+    overflow:hidden;
+    z-index:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    display:none;
+}
+
+.modal-content{
+    width:700px;
+    height:500px;
+    background-color: white;
+    border-radius:4px;
+    text-align:center;
+    padding:10px;
+    position:relative;
+}
+
+
+.close{
+    
+    position:absolute;
+    font-size:40px;
+    right:15px;
+    top:0;
+    margin-right:14 px;
+    font-size:30 px;
+    transform: rotate(45deg);
+    cursor:pointer;
+}
+
 
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
@@ -189,34 +238,47 @@ font-size: 20px;}
 
 .container-header{
     margin-bottom:0px;
+    position:absolute;
+    height:5vh;
 }
 }
 @media screen and (max-width: 800px){
     nav li {
-  margin-left: 10px;
+  margin-left: 5px;
   margin-right:5px;
   padding-top: 15px;
   padding-bottom:0px;
   
 }
     
-   
-  
-        
+   nav a{
+       font-size:17px;
+
+   }   
+    .Username {
+       font-size:17px;
+       
+   }
         
 }
 
 @media screen and (max-width: 600px){
     nav li {
-  margin-left: 8px;
-  margin-right:5px;
-  padding-top: 15px;
+  margin-left: 4px;
+  margin-right:4px;
+  padding-top: 10px;
   padding-bottom:0px;
   
 }
     
+    
+    
     nav a{
-    font-size:18px;}
+    font-size:15px;}
+    
+    .Username{
+    font-size:15px;
+    }
         
 }
 

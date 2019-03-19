@@ -15,7 +15,7 @@
             <ul>
             <li><a href="">My Profile</a><li>
             <li><a href="index.html">Timeline</a><li>
-            <li><a href="MyPlans.html">MyPlans</a><li>
+            <li><a href="MyPlans.html">My Plans</a><li>
             <li><a href="Calo-Web.html">Sign Out</a><li>
             <div class="Username">Username </div>
              
@@ -31,7 +31,7 @@
 <div class="container">
 
      <div class="container-create-button">
-     <div class="create-button">
+     <div id="create-button">
      Create Plan
      </div>
      
@@ -46,15 +46,35 @@
           <ul>
           </ul>
      </div>  
-<div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
-  </div>
-</div>
+
 </div>
 
+  <div class="bg-modal"> 
+    
+    <div class="modal-content"> 
+    <div class="close">+</div>
+    
+    
+    
+    </div>
+</div>
+ <script>
+    var list= document.getElementById("create-button");
+    tab= [];
+   
+    console.log("test");
+   list.addEventListener('click', function() {
+    
+   document.querySelector('.bg-modal').style.display= 'flex'; 
+});//}
+
+    document.querySelector('.close').addEventListener('click', 
+    function(){
+    document.querySelector('.bg-modal').style.display= 'none';
+    
+    });
+    
+    </script>
 
 </body>
 </html>
