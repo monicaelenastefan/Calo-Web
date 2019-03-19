@@ -10,7 +10,8 @@ body{
     background-size:     cover;                  
     background-repeat:   no-repeat;
     background-position: center center;  
-    margin:0;    
+    margin-bottom: :0;   
+    height: 100%; 
    
 }
 
@@ -41,7 +42,7 @@ p{
 .input_data{
   font-family: Nova;
   text-align: center;
-  margin: 28px auto;
+  margin: 100px auto;
   width: 40%;
 }
 
