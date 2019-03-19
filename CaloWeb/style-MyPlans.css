@@ -49,7 +49,7 @@ body{
     width:170px;
     margin:auto;
     
-    opacity:0.2;
+    
     margin-top:40px;
 
     
@@ -59,17 +59,23 @@ body{
     
     text-transform: uppercase;
     font-size: 30px;
-    color: black;
+    color:rgb(20,70,34,0.8);
     font-family: Nova;
     height:70px;
-  
-    background-color:white;
-    border: 2px solid green;
+    background-color:rgb(20,70,34,0.3);
+    cursor: pointer;
+    border: 2px solid rgb(20,70,34);
     position:absolute;
     text-align:center;
     display:flex;
     align-items:center;
     justify-content:center;
+}
+
+.create-button:hover {
+    
+    color:rgb(20,70,34);
+  background-color:rgb(20,70,34,0.7);
 }
 
 .container-plans
@@ -165,39 +171,6 @@ nav a:hover::before {
 
 }    
 
- 
-  
-.left-wheel {
-    position: fixed;
-    content: url(wheel1.5.png);
-    top: 49%;
-    left: -3%;
-    opacity:0.75;
-    width:550px;
-    height:550px;
-    margin:-200px 0 0 -200px;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
-    animation:spin 25s linear infinite;
-    z-index:-1;
-
-}
-
-.right-wheel {
-    position: fixed;
-    content: url(wheel1.5.png);
-    top: 49%;
-    right: -15%;
-    opacity:0.75;
-    width:550px;
-    height:550px;
-    margin:-200px 0 0 -200px;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
-    animation:spin 25s linear infinite;
-    z-index:-1;
-    
-}
 
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
