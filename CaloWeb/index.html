@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+   
 </head>
 <body>
 <header>
@@ -38,7 +38,35 @@
 			<footer>Add a card...</footer>
 		</div>
 		
+    
+    
+    </div>
+    
+    <div class="bg-modal"> 
+    
+    <div class="modal-content"> 
+    <div class="close">+</div>
+    
+    
+    
+    </div>
+</div>
+ <script>
+    var list= document.querySelectorAll(".list ul li");
+    tab= [];
+   for (var i = 0 ; i < list.length; i++) {
+    console.log("test");
+   list[i].addEventListener('click', function() {
+    
+   document.querySelector('.bg-modal').style.display= 'flex'; 
+});//}
 
-
+    document.querySelector('.close').addEventListener('click', 
+    function(){
+    document.querySelector('.bg-modal').style.display= 'none';
+    
+    });
+   } 
+    </script>
 </body>
 </html>
