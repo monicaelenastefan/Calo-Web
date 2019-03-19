@@ -5,39 +5,38 @@
 
 
 html { overflow-y : hidden;}
-body{
-   
-    margin:0;
-    
-background-image: linear-gradient(to bottom, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #c6e1c0, #b5d2b0, #a4c3a0, #7fa27e, #5c825d, #39633f, #144622);
+
+
+body{   
+  margin:0;
+  background-image: linear-gradient(to bottom, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #c6e1c0, #b5d2b0, #a4c3a0, #7fa27e, #5c825d, #39633f, #144622);
 }
+
 .container-header 
 {
   width: 80%;
   margin: 0 auto;
-  z-index: 0;
-  height:5vh;
 }
 
  .lists {
      
-    display:flex;
-    height:95vh;
-   overflow-x:auto;
-overflow-y: hidden;
-    flex-wrap: nowrap;
+  display:flex;
+  height:95vh;
+  overflow-x:auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
   bottom:0;
  
 
 }
- .lists > * {
-   flex: 0 0 auto;
-   margin-left: 10px;
-   margin-bottom: 30px;
-   flex-wrap:nowrap;
-   bottom:0px;
-   z-index:0;
 
+.lists > * {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  flex-wrap:nowrap;
+  bottom:0px;
+  z-index:0;
 }
  
  .list {
@@ -74,7 +73,7 @@ overflow-y: hidden;
  .list ul {
    list-style: none;
    margin: 0;
-   
+   overflow-y: scroll; 
    position: relative;
    object-fit: fill;
    max-height: 100%;
@@ -88,6 +87,31 @@ overflow-y: hidden;
    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
    cursor:pointer;
 }
+
+@media only screen and ( max-width: 639px) {
+  .list ul li {height: 30px; font-size: 15px; width: 230px;} 
+  .list header {width: 250px;} 
+  .list ul {width: 250px;}
+  .list footer{width: 250px;}
+}
+
+@media only screen and (max-height: 949px) {
+  .list ul li {height: 20px; font-size: 15px; width: 220px;} 
+  .list header {width: 250px;height: 40px;} 
+  .list ul {width: 250px;height: 350px; overflow-y: scroll; overflow-x: hidden;}
+  .list footer{width: 250px;height: 40px;}
+}
+
+
+
+@media only screen and (max-width: 532px) {
+  /* For tablets: */
+  .list ul li {height: 20px;} 
+  .list ul {height: 310px; width: 250px;} 
+}
+
+
+
  .list ul li:not(:last-child) {
    margin-bottom: 10px;
 
