@@ -4,14 +4,14 @@
     src: url("Nova.otf") format("opentype");
 }
 
+
 body{
     
     background-color: #D7F1D0;
     background-size:     cover;                  
     background-repeat:   no-repeat;
     background-position: center center;  
-    margin-bottom: :0;   
-    height: 100%; 
+    margin:0;    
    
 }
 
@@ -43,7 +43,7 @@ p{
   font-family: Nova;
   text-align: center;
   margin: 100px auto;
-  width: 40%;
+  width: 60%;
 }
 
 .details
