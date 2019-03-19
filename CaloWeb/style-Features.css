@@ -4,41 +4,43 @@
     src: url("Nova.otf") format("opentype");
 }
 
-
-
-
-
-body{
-    
+body
+{
     background-color: #D7F1D0;
-    background-size:     cover;                  
-    background-repeat:   no-repeat;
+    background-size: cover;                  
+    background-repeat: no-repeat;
     background-position: center center;  
-    margin:0;    
-   
+    margin:0;      
 }
 
-
-.rotate {
-    animation: rotation 8s infinite linear;
+.container-header {
+	width: 80%;
+	margin: 0 auto;
+  margin-bottom:0px;
 }
+
+.container
+{
+    position: relative;
+    text-align: left;
+}
+
+.title
+{
+  margin-top: 15px;
+    font-family: Nova;
+    content: left;
+    width: 100%;
+    height: 15%;
+    color: rgb(20,70,34);
+    font-size: 25px;
+} 
 
 
 p{ 
     font-family:Nova;
-    font-size:40px;
+    font-size:20px;
     text-align: center;
-}
-  
-.container-header {
-	width: 80%;
-	margin: 0 auto;
-}
-
-.container{
-    position: relative;
-    text-align: center;
-
 }
 
 header {
@@ -100,52 +102,6 @@ nav a:hover::before {
   width: 100%;
 }
 
-
-.center-text{
-    font-family: Nova;
-    position: center;
-    text-align: center;
-    color: rgb(20,70,34);
-    font-size:60px;
-    padding-top:110px;
-    
-
-}    
-
- 
-  
-.left-wheel {
-    position: fixed;
-    content: url(wheel1.5.png);
-    top: 49%;
-    left: -3%;
-    opacity:0.75;
-    width:550px;
-    height:550px;
-    margin:-200px 0 0 -200px;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
-    animation:spin 25s linear infinite;
-    z-index:-1;
-
-}
-
-.right-wheel {
-    position: fixed;
-    content: url(wheel1.5.png);
-    top: 49%;
-    right: -15%;
-    opacity:0.75;
-    width:550px;
-    height:550px;
-    margin:-200px 0 0 -200px;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
-    animation:spin 25s linear infinite;
-    z-index:-1;
-    
-}
-
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
@@ -160,10 +116,6 @@ nav li {
 
 nav a{ 
 font-size: 20px;}
-
-.container-header{
-    margin-bottom:0px;
-}
 
 @media screen and (max-width: 800px){
     nav li {
