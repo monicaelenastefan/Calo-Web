@@ -276,6 +276,8 @@ nav a:hover::before {
     overflow:auto;
 }
 
+
+
 @media screen and (max-width: 430px){
   .container-header {height: 12vh;}
 }
@@ -325,9 +327,89 @@ input[type=text] {
 
 }
 
+.container-buttons{
+    width: 93%;
+    height:10%;
+    margin-top:10px;
+    margin-left:15px;
+    
+    position: absolute;
+    display:flex;
+      align-items:center;
+    justify-content:center;
+   
+    border-radius:4px;
+    
+}
+
+.aec-button{
+    
+    margin-left:40px;
+    margin-right:40px;
+    height:100%;
+    width:150px;
+    background-color:rgb(20,70,34,0.3);
+     font-family: Nova;
+     font-size: 20px;
+    cursor: pointer;
+    border: 2px solid rgb(20,70,34);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-transform: uppercase;
+      border-radius:4px;
+}
+
+.container-plan-info{
+    width: 95%;
+    height:75%;
+    margin-top:4px;
+    margin-left:15px;
+    
+    position: relative;
+   
+    bottom:0px;
+    border: 3px solid rgb(20,70,34);
+    border-radius:4px;
+    overflow:hidden;
+   
+
+}
+.container-plan-name{
+   
+   width:100%;
+   font-family: Nova;
+   font-size:30px;
+   color:black;
+   text-align:center;
+}
+
+
 .container-field{
     padding: 7px;
 }
+
+
+#planInfo {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  height:100%;
+  position: absolute;
+  overflow-y: auto;
+  
+}
+
+#planInfo td{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+
+#planInfo tr:nth-child(even){background-color: #f2f2f2;}
+
+#planInfo tr:hover {background-color: #ddd;}
 
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
