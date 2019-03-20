@@ -259,7 +259,56 @@ nav a:hover::before {
     transform: rotate(45deg);
     cursor:pointer;
 }
+ 
+.container-form{
+    width: 95%;
+    height:90%;
+    margin-top:22px;
+    margin-left:15px;
+    
+    position: relative;
+   
+    bottom:0px;
+    border: 3px solid rgb(20,70,34);
+    border-radius:4px;
+    overflow:auto;
+}
 
+input[type=button]
+{
+  width: 100px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;  
+  background-color: rgb(20,70,34);
+  color: white;
+  font-family: Nova;
+
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 3px solid #555;
+  box-sizing: border-box;
+}
+.input_data{
+  font-family: Nova;
+/*  border-radius: 5px;
+*/  /*padding: 20px;*/
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  
+
+
+}
+
+.container-field{
+    padding: 7px;
+}
 
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
