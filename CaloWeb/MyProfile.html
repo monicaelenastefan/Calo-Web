@@ -23,48 +23,36 @@
 	</header>	
 
 	<div class="container">
-		<div class="mmm"><form>Name: 
-			<input id="toedit" type="text" name="name" value="MyName" readonly><br><input type="submit" value="Edit" class="SubmitButton" onclick="myFunction()"><br>
-		</form></div>
-		<div class="mmm"><form>E-mail: 
-			<input id="toedit1" type="email" name="email" value="myemail@mail.com" readonly><br>
-  		<input type="submit" value="Edit" class="SubmitButton" onclick="myFunction1()"><br>
-		</form></div>
-		<div class="mmm"><form>Password: 
-			<input id="toedit2" type="password" name="password" value="MyPassword" readonly><br>
-  		<input type="submit" value="Edit" class="SubmitButton" onclick="myFunction2()"><br>
-		</form></div>
-		<div class="mmm"><form>Motivation: 
-			<input id="toedit3" type="text" name="motivation" value="MyMotivation" readonly><br>
-  		<input type="submit" value="Edit" class="SubmitButton" onclick="myFunction3()"><br>
-		</form></div>
-		<div class="mmm"><form>Current Weight: 
-			<input id="toedit4" type="number" name="weight" value="65" readonly><br>
-  		<input type="submit" value="Edit" class="SubmitButton" onclick="myFunction4()"><br>
-		</form></div>
-  		<input type="submit" value="Save" class="SaveButton"><br>
+		<form>Name: 
+			<input id="toedit" type="text" name="name" value="MyName" readonly><br>
+		</form>
+		<form>E-mail: 
+			<input id="toedit" type="email" name="email" value="myemail@mail.com" readonly><br>
+		</form>
+		<form>Password: 
+			<input id="toedit" type="password" name="password" value="MyPassword" readonly><br>
+		</form>
+		<form>Motivation: 
+			<input id="toedit" type="text" name="motivation" value="MyMotivation" readonly><br>
+		</form>
+		<form>Weight:
+			<input id="toedit" type="number" name="weight" value="65" readonly><br>
+		</form>
+		<input class="SaveButton" type="submit" value="Edit" onclick="myFunction()">
+		<input class="SaveButton" type="submit" value="Save" onclick="myFunction1()">
+		<script type="text/javascript">
+			function myFunction()
+			{
+				document.getElementById("toedit").readOnly=false;
+			}
+			function myFunction1()
+			{
+				document.getElementById("toedit").readOnly=true;
+			}
+		</script>
+
+
+
 	</div>
-	<script type="text/javascript">
-		function myFunction()
-		{
-			document.getElementById("toedit").readOnly=false;
-		}
-		function myFunction1()
-		{
-			document.getElementById("toedit1").readOnly=false;
-		}
-		function myFunction2()
-		{
-			document.getElementById("toedit2").readOnly=false;
-		}
-		function myFunction3()
-		{
-			document.getElementById("toedit3").readOnly=false;
-		}
-		function myFunction4()
-		{
-			document.getElementById("toedit4").readOnly=false;
-		}
-	</script>
 </body>
 </html>
