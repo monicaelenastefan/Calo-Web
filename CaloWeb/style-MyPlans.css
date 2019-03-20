@@ -24,8 +24,10 @@ body{
 
 .container-header {
   width: 100%;
+  margin: 0 auto;
+    background-color: rgb(20,70,34);
 
-  height: 5vh;
+  height: 3vh;
   display:flex;
   align-items: center;
     justify-content:center;
@@ -272,6 +274,22 @@ nav a:hover::before {
     border: 3px solid rgb(20,70,34);
     border-radius:4px;
     overflow:auto;
+}
+
+@media screen and (max-width: 430px){
+  .container-header {height: 12vh;}
+}
+
+@media screen and (max-width: 238px){
+  .container-header {height: 17vh;}
+}
+
+@media screen and (max-width: 171px){
+  .container-header {height: 23vh;}
+}
+
+@media screen and (max-width: 98px){
+  .container-header {height: 28vh;}
 }
 
 input[type=button]
