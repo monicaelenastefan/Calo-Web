@@ -315,12 +315,19 @@ input[type=text] {
 
 
 
+@media only screen and ( max-width: 686px){
+  .modal-content {width: 400px; height: 300px;}
+  .aec-button {font-size: 13px;}
+}
+
 @media only screen and ( max-width: 639px) {
   .list ul li {height: 30px; font-size: 15px; width: 230px;} 
   .list header {width: 250px;} 
   .list ul {width: 250px;}
   .list footer{width: 250px;}
   .container-header {height: 17vh;}
+  .modal-content {width: 400px;}
+
 }
 
 @media only screen and (max-height: 949px) {
@@ -463,19 +470,6 @@ nav a:hover::before {
     justify-content:center;
     align-items:center;
     display:none;
-}
-
-.modal-content{
-    width:700px;
-    height:500px;
-    background-color: white;
-    border-radius:4px;
-    text-align:center;
-    padding:10px;
-    position:relative;
-    display:inline-block;
-    
-   
 }
 
 
