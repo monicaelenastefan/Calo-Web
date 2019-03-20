@@ -284,6 +284,7 @@ input[type=button]
   background-color: rgb(20,70,34);
   color: white;
   font-family: Nova;
+  cursor:pointer;
 
 }
 
