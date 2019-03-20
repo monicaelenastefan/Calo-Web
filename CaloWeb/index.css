@@ -177,12 +177,15 @@ body{
 }
 
 
+
+
 @media only screen and ( max-width: 639px) {
-  .list ul li {height: 30px; font-size: 15px; width: 230px;} 
+  .list ul li {height: 20px; font-size: 15px; width: 230px;} 
   .list header {width: 250px;} 
   .list ul {width: 250px;}
   .list footer{width: 250px;}
-  .container-header {height: 17vh;}
+  .container-header {height: 8vh;}
+  .modal-content {width: 400px;}
 }
 
 @media only screen and (max-height: 949px) {
@@ -402,7 +405,7 @@ font-size: 20px;}
   
 }
     
-    
+  .modal-content {width: 500px;}  
     
     nav a{
     font-size:17px;}
