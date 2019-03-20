@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="dialog.css">
-<link rel="stylesheet" href="style-MyPlans.css">
-
+  <title>MyPlans</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="dialog.css">
+  <link rel="stylesheet" href="style-MyPlans.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
@@ -45,6 +46,76 @@
   <div class="bg-modal"> 
     
     <div class="modal-content"> 
+    
+    <div class="container-form">
+    
+    <div class="input_data">
+  
+    <label for="name">Plan Name</label>
+    <input type="text" id="name" placeholder="Sample..">
+
+    <div class="container-field"><label for="days">Amount of days:</label>
+    <input type="number" name="days" min="1" max="366"> </div>
+        
+   
+    <div class="container-field">Choose your level of activity: 
+    <label for="activity"> Sedentary </label>
+    <input type="checkbox" id="activity">
+    
+    <label for="activity"> Light </label>
+    <input type="checkbox" id="activity">
+    
+    <label for="activity"> Active </label>
+    <input type="checkbox" id="activity">
+    
+    <label for="activity"> Very Active</label>
+    <input type="checkbox" id="activity">
+    </div>
+   
+    <div class="container-field">Gender:
+     <label for="gender"> Male</label>
+    <input type="checkbox" id="activity">
+    
+    <label for="gender"> Female </label>
+    <input type="checkbox" id="activity">
+    
+    </div>
+   
+    <div class="container-field"> 
+    <label for="job"> Enter Start Date</label>
+    <input type="date" id="startDate">
+    
+    
+    </div>
+      
+   <div class="container-field"> <label for="goal">Amount of kilograms to lose:</label>
+    <input type="number" name="kilograms" min="1" max="150"> </div>
+    
+     <div class="container-field"> <label for="Age">Age:</label>
+    <input type="number" name="kilograms" min="1" max="100"> </div>
+    
+      <div class="container-field"> <label for="currentWeight">Current Weight:</label>
+    <input type="number" name="currentWeight" min="1" max="300"> </div>
+    
+     <div class="container-field">Choose restrictions: 
+    <label for="restrictions"> None </label>
+    <input type="checkbox" id="activity">
+    
+    <label for="restrictions"> Vegan </label>
+    <input type="checkbox" id="activity">
+    
+    <label for="restrictions"> Vegetarian</label>
+    <input type="checkbox" id="activity">
+    
+    
+    </div>
+    <form>
+            <input type="button" value="CREATE" class="CreateButton" onclick="window.location.href='MyPlans.html'">
+        </form>
+
+</div>
+    
+    </div>
     <div class="close">+</div>
     
     
@@ -54,7 +125,49 @@
 
     <div class="plan-modal">
     <div class="modal-content">
-    ana
+    <div class="container-form"> 
+
+    <div class="container-plan-name"> Plan information: </div>
+
+    <div class="container-plan-info"> 
+    
+     <table id="planInfo">
+    <tr>
+        <td> Name</td>
+        <td> Sample </td>
+       
+        </tr>
+       <tr>
+        <td> Start Date</td>
+        <td> 17/3/2019 </td>
+       
+        </tr> 
+        
+        <tr>
+        <td> Duration</td>
+        <td> 10 days </td>
+        </tr>
+        <tr>
+        <td> Weight on StartDate</td>
+        <td> 101 kg </td>
+       
+        </tr>
+        
+        <td> Restrictions </td>
+        <td> None </td>
+        
+        </tr>
+    </table>
+    </div>
+    
+    <div class="container-buttons"> 
+    
+    <div class="aec-button">Export to XML </div>
+    
+    </div>
+    
+    
+    </div>
     <div class="close-plan">+</div>
     
     
