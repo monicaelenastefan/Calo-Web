@@ -42,16 +42,34 @@ p{
     height:100%;
     text-align:center;
     overflow: hidden;
-    position:fixed;
+    position:relative;
     width:100%;
     margin:auto;
 }
 
 .container-empty-space{
     position: relative;
-    height:50px;
+    height:100px;
 }
 
+.container  h1{
+  font-family: Nova;
+    content: center;
+    
+    color: rgb(20,70,34);
+    font-size:60px;
+}
+
+.container h2{
+
+color: rgb(20,70,34);
+}
+
+.container h3{
+  margin-left:30%;
+  margin-right:30%;
+color: rgb(20,70,34);
+}
 header {
   background-color: rgb(20,70,34);
  
@@ -188,6 +206,72 @@ nav a:hover::before {
     z-index:-1;
     
 }
+
+
+
+@media only screen and (max-width: 1300px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.9;}
+  .right-wheel{opacity: 0.9;}  
+}
+
+@media only screen and (max-width: 1250px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.8;}
+  .right-wheel{opacity: 0.8;}  
+}
+
+@media only screen and (max-width: 1200px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.7;}
+  .right-wheel{opacity: 0.7;}  
+}
+
+@media only screen and (max-width: 1150px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.6;}
+  .right-wheel{opacity: 0.6;}  
+}
+
+@media only screen and (max-width: 1100px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.5;}
+  .right-wheel{opacity: 0.5;}  
+}
+
+@media only screen and (max-width: 1050px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.4;}
+  .right-wheel{opacity: 0.4;}  
+}
+
+@media only screen and (max-width: 1000px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.3;}
+  .right-wheel{opacity: 0.3;}  
+}
+
+@media only screen and (max-width: 950px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.2;}
+  .right-wheel{opacity: 0.2;}  
+}
+
+@media only screen and (max-width: 900px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.1;}
+  .right-wheel{opacity: 0.1;}  
+}
+
+@media only screen and (max-width: 850px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0;}
+  .right-wheel{opacity: 0;}  
+}
+
+
+
+
 
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
