@@ -49,7 +49,7 @@ p{
 
 .container-empty-space{
     position: relative;
-    height:100px;
+    height:20px;
 }
 
 .container  h1{
@@ -61,11 +61,12 @@ p{
 }
 
 .container h2{
-
+font-family: Nova;
 color: rgb(20,70,34);
 }
 
 .container h3{
+  font-family: Nova;
   margin-left:30%;
   margin-right:30%;
 color: rgb(20,70,34);
