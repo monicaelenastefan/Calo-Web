@@ -15,7 +15,7 @@ body{
 .container-header {
   width: 100%;
   margin: 0 auto;
-  height: 5vh;
+  height: 7vh;
   display:flex;
   align-items: center;
   /*justify-content:center;
@@ -182,6 +182,7 @@ body{
   .list header {width: 250px;} 
   .list ul {width: 250px;}
   .list footer{width: 250px;}
+  .container-header {height: 17vh;}
 }
 
 @media only screen and (max-height: 949px) {
@@ -197,12 +198,12 @@ body{
   /* For tablets: */
   .list ul li {height: 30px;} 
   .list ul {height: 310px; width: 250px;} 
-  .container-header {height: 10vh;}
+  .container-header {height: 13vh;}
 }
 
 @media only screen and (max-width: 259px) {
   /* For tablets: */
-  .container-header {height: 17vh;}
+  .container-header {height: 19vh;}
 }
 @media only screen and (max-width: 183px) {
   /* For tablets: */ 
