@@ -137,6 +137,22 @@ body{
 
 }
 
+.border{
+    width: 95%;
+    height:90%;
+    margin-top:22px;
+    margin-left:15px;
+    
+    position: relative;
+   
+    bottom:0px;
+    border: 3px solid rgb(20,70,34);
+    border-radius:4px;
+    overflow:auto;
+   
+
+}
+
 .container-buttons-add{
     width: 93%;
     height:10%;
