@@ -169,6 +169,23 @@ body{
 }
 
 
+#save:hover{
+    
+    color:white;
+    background-color:rgb(20,70,34,0.6);
+}
+
+#add:hover{
+    
+    color:white;
+    background-color:rgb(20,70,34,0.6);
+}
+
+#ex-button:hover{
+    color:white;
+    background-color:rgb(20,70,34,0.6);
+    
+}
 .container-buttons{
     width: 93%;
     height:10%;
@@ -293,7 +310,23 @@ input[type=text] {
     background-color:rgb(20,70,34,0.6);
 }
 
+#save:hover{
+    
+    color:white;
+    background-color:rgb(20,70,34,0.6);
+}
 
+#add:hover{
+    
+    color:white;
+    background-color:rgb(20,70,34,0.6);
+}
+
+#ex-button:hover{
+    color:white;
+    background-color:rgb(20,70,34,0.6);
+    
+}
 
 
 @media only screen and ( max-width: 639px) {
