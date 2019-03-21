@@ -156,7 +156,7 @@
     </div>
     
     <div class="container-buttons">
-        <div class="aec-button">Add </div>
+        <div id="add">Add </div>
         <div class="aec-button">Edit </div>
         <div class="aec-button">Delete </div>
 </div>
@@ -166,7 +166,29 @@
     
     
     </div>
-</div>
+    
+ </div>   
+    
+    <div class="add-item-modal">
+    
+    <div class="modal-content"> 
+    
+    <div class="border">
+    <div class="container-field">Search for aliment: </div>
+   
+   <input type="text" placeholder="Search..">
+     <div class="container-field"> <label for="portion">Portion size in grams: </label>
+    <input type="number" id="portion" name="portion" min="0" max="5000"> </div>
+    
+    <div class="container-buttons-add"> 
+     <div id="save"> Save</div>
+     <div id="ex-button">Close </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+
  <script>
     var list= document.querySelectorAll(".list ul li");
     tab= [];
@@ -183,6 +205,18 @@
     
     });
    } 
+   
+   var el=document.getElementById("add");
+   el.addEventListener('click', function() {
+    
+   document.querySelector('.add-item-modal').style.display= 'flex'; 
+});//}
+
+    document.querySelector('#ex-button').addEventListener('click', 
+    function(){
+    document.querySelector('.add-item-modal').style.display= 'none';
+    
+    });
     </script>
 </body>
 </html>
