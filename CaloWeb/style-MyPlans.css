@@ -127,7 +127,7 @@ body{
 }
 
 .container-plan-name{
-    color:solid black;
+    color:black;
     font-family:Nova;
     font-size:20px;
     text-align:center;
@@ -242,8 +242,8 @@ body{
     font-size:40px;
     right:15px;
     top:0;
-    margin-right:14 px;
-    font-size:30 px;
+    margin-right:14px;
+    font-size:30px;
     transform: rotate(45deg);
     cursor:pointer;
 }
@@ -255,8 +255,8 @@ body{
     font-size:40px;
     right:15px;
     top:0;
-    margin-right:14 px;
-    font-size:30 px;
+    margin-right:14px;
+    font-size:30px;
     transform: rotate(45deg);
     cursor:pointer;
 }
