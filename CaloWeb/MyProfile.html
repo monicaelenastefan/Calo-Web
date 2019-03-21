@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	
 	<title>My Profile Calo'Web</title>
@@ -31,36 +31,19 @@
 			<p>Weight:</p>
 		</div>
 		<div class="boxes">
-			<input id="toedit" type="text" name="name" value="MyName" readonly><br>
-			<input id="toedit" type="email" name="email" value="myemail@mail.com" readonly><br>
-			<input id="toedit" type="password" name="password" value="MyPassword" readonly><br>
-			<input id="toedit" type="text" name="motivation" value="MyMotivation" readonly><br>
-			<input id="toedit" type="number" name="weight" value="65" readonly><br>
+			<input type="text" name="name" value="MyName" readonly><br>
+			<input type="email" name="email" value="myemail@mail.com" readonly><br>
+			<input type="password" name="password" value="MyPassword" readonly><br>
+			<input type="text" name="motivation" value="MyMotivation" readonly><br>
+			<input type="number" name="weight" value="65" readonly><br>
 		</div>
-
-<!--
-		<form>Name: 
-			<input id="toedit" type="text" name="name" value="MyName" readonly><br>
-		</form>
-		<form>E-mail: 
-			<input id="toedit" type="email" name="email" value="myemail@mail.com" readonly><br>
-		</form>
-		<form>Password: 
-			<input id="toedit" type="password" name="password" value="MyPassword" readonly><br>
-		</form>
-		<form>Motivation: 
-			<input id="toedit" type="text" name="motivation" value="MyMotivation" readonly><br>
-		</form>
-		<form>Weight:
-			<input id="toedit" type="number" name="weight" value="65" readonly><br>
-		</form>    -->
 		<div class="buttonsave">
 			<input class="SaveButton" type="submit" value="Save" onclick="myFunction1()">
 		</div>
 		<div class="editbutton">
 			<input class="EditButton" type="submit" value="Edit" onclick="myFunction()">
 		</div>
-		<script type="text/javascript">
+		<script>
 			function myFunction()
 			{
 				document.getElementById("toedit").readOnly=false;
