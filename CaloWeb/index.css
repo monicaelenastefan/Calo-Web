@@ -295,7 +295,6 @@ input[type=text] {
 
 
 
-
 @media only screen and ( max-width: 639px) {
   .list ul li {height: 20px; font-size: 15px; width: 230px;} 
   .list header {width: 250px;} 
