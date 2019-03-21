@@ -23,6 +23,22 @@
 	</header>	
 
 	<div class="container">
+		<div class="paragraphs">
+			<p>Name:</p>
+			<p>E-mail:</p>
+			<p>Password:</p>
+			<p>Motivation:</p>
+			<p>Weight:</p>
+		</div>
+		<div class="boxes">
+			<input id="toedit" type="text" name="name" value="MyName" readonly><br>
+			<input id="toedit" type="email" name="email" value="myemail@mail.com" readonly><br>
+			<input id="toedit" type="password" name="password" value="MyPassword" readonly><br>
+			<input id="toedit" type="text" name="motivation" value="MyMotivation" readonly><br>
+			<input id="toedit" type="number" name="weight" value="65" readonly><br>
+		</div>
+
+<!--
 		<form>Name: 
 			<input id="toedit" type="text" name="name" value="MyName" readonly><br>
 		</form>
@@ -37,9 +53,13 @@
 		</form>
 		<form>Weight:
 			<input id="toedit" type="number" name="weight" value="65" readonly><br>
-		</form>
-		<input class="SaveButton" type="submit" value="Edit" onclick="myFunction()">
-		<input class="SaveButton" type="submit" value="Save" onclick="myFunction1()">
+		</form>    -->
+		<div class="buttonsave">
+			<input class="SaveButton" type="submit" value="Save" onclick="myFunction1()">
+		</div>
+		<div class="editbutton">
+			<input class="EditButton" type="submit" value="Edit" onclick="myFunction()">
+		</div>
 		<script type="text/javascript">
 			function myFunction()
 			{
