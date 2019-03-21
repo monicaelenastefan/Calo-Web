@@ -31,8 +31,103 @@ p{
   width: 80%;
   margin: 0 auto;
 }
+ 
+.left-wheel {
+    position: fixed;
+    content: url(wheel1.5.png);
+    top: 49%;
+    left: -3%;
+    opacity:0.75;
+    width:550px;
+    height:550px;
+    margin:-200px 0 0 -200px;
+    -webkit-animation:spin 25s linear infinite;
+    -moz-animation:spin 25s linear infinite;
+    animation:spin 25s linear infinite;
+    z-index:-1;
+
+}
+
+.right-wheel {
+    position: fixed;
+    content: url(wheel1.5.png);
+    top: 49%;
+    right: -15%;
+    opacity:0.75;
+    width:550px;
+    height:550px;
+    margin:-200px 0 0 -200px;
+    -webkit-animation:spin 25s linear infinite;
+    -moz-animation:spin 25s linear infinite;
+    animation:spin 25s linear infinite;
+    z-index:-1;
+    
+}
+
+
+
+@media only screen and (max-width: 1300px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.9;}
+  .right-wheel{opacity: 0.9;}  
+}
+
+@media only screen and (max-width: 1250px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.8;}
+  .right-wheel{opacity: 0.8;}  
+}
+
+@media only screen and (max-width: 1200px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.7;}
+  .right-wheel{opacity: 0.7;}  
+}
+
+@media only screen and (max-width: 1150px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.6;}
+  .right-wheel{opacity: 0.6;}  
+}
+
+@media only screen and (max-width: 1100px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.5;}
+  .right-wheel{opacity: 0.5;}  
+}
+
+@media only screen and (max-width: 1050px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.4;}
+  .right-wheel{opacity: 0.4;}  
+}
+
+@media only screen and (max-width: 1000px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.3;}
+  .right-wheel{opacity: 0.3;}  
+}
+
+@media only screen and (max-width: 950px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.2;}
+  .right-wheel{opacity: 0.2;}  
+}
+
+@media only screen and (max-width: 900px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0.1;}
+  .right-wheel{opacity: 0.1;}  
+}
+
+@media only screen and (max-width: 850px) {
+  /* For tablets: */
+  .left-wheel{opacity: 0;}
+  .right-wheel{opacity: 0;}  
+}
 
 .container{
+
   position: relative;
   text-align: left;
   font-family: Nova;
@@ -42,8 +137,8 @@ p{
 .input_data{
   font-family: Nova;
   text-align: center;
-  margin: 100px auto;
-  width: 60%;
+  margin: 60px auto;
+  width: 30%;
 }
 
 .details

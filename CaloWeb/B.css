@@ -54,7 +54,7 @@ p{
 
 .container  h1{
   font-family: Nova;
-    content: center;
+    /*content: center;*/
     
     color: rgb(20,70,34);
     font-size:60px;
@@ -136,7 +136,7 @@ nav a:hover::before {
 
 .center-text{
     font-family: Nova;
-    content: center;
+   /* content: center;*/
     width:700px;
     height:60px;
     color: rgb(20,70,34);
@@ -150,8 +150,8 @@ nav a:hover::before {
 .sub-title{
     font-family: Nova;
     font-size: 25px;
-    width:650;
-    height:50;
+    width:650px;
+    height:50px;
     color: green;
     margin:auto;
     background-color:#D7F1D0  ;
@@ -162,8 +162,8 @@ nav a:hover::before {
     font-family: Nova;
     color: green;
     font-size: 30px;
-    width:600;
-    height:100;
+    width: 600px;
+    height: 100px;
     margin:auto;
     background-color:#D7F1D0  ;
    
@@ -185,8 +185,8 @@ nav a:hover::before {
     width:550px;
     height:550px;
     margin-left:0%;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
+/*    -webkit-animation:spin 25s linear infinite;
+    -moz-animation:spin 25s linear infinite;*/
     animation:spin 25s linear infinite;
     z-index:-1;
 
@@ -201,8 +201,8 @@ nav a:hover::before {
     width:550px;
     height:550px;
     margin-right:0%;
-    -webkit-animation:spin 25s linear infinite;
-    -moz-animation:spin 25s linear infinite;
+ /*   -webkit-animation:spin 25s linear infinite;
+    -moz-animation:spin 25s linear infinite;*/
     animation:spin 25s linear infinite;
     z-index:-1;
     
@@ -292,6 +292,7 @@ font-size: 20px;}
 
 .container-header{
     margin-bottom:0px;
+}
 }
 
 @media screen and (max-width: 800px){
