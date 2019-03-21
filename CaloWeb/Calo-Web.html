@@ -1,65 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <title>Calo-Web</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="B.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+  <title>Calo-Web</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="Calo-Web.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
 <body>
-
-<header>
-     <div class="container-header">
-     
-        <nav>
-            <ul>
-            <li><a href="Features.html">Features</a><li>
-            <li><a href="Calo-Web.html">Home</a><li>
-            <li><a href="SignIn.html">Sign In</a><li>
-            <li><a href="SignUp.html">Sign Up</a><li>
-             
-           
-            </ul>
-        </nav>
-     </div>
-		
-  
-</header>
-<div class="container">
-        <!-- <div class="container-empty-space"></div>
-        <div class="center-text">Welcome to CALO'WEB!</div>
-        <div class="sub-title">This is Calo-Web, the calories calculator.</div>
-        <div class="description">It has never been easier to take care of yourself! Monitorize your meals, calculate consumed calories, acheive goals.</div>
-        <img class="logo-page" src="logo.png" width="250" height="250">
- -->
- <div class="container-empty-space"></div>
- 	<h1>Welcome to Calo'web!</h1>
- 	<h2>This is Calo-Web, the calories calculator.</h2>
-    <h3>It has never been easier to take care of yourself! Monitorize your meals, calculate consumed calories, acheive goals.</h3>
-    <img class="logo-page" alt="Roate fructe/legume" src="logo.png" width="250" height="250">
-    <div class="left-wheel" ></div>
-    <div class="right-wheel"></div>
-    
-</div>
-<script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
-
+  <header>
+    <div class="container-header"> 
+      <nav>
+        <ul>
+          <li><a href="Features.html">Features</a><li>
+          <li><a href="Calo-Web.html">Home</a><li>
+          <li><a href="SignIn.html">Sign In</a><li>
+          <li><a href="SignUp.html">Sign Up</a><li>           
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <div class="container-empty-space"></div>
+ 	    <h1>Welcome to Calo'web!</h1>
+ 	    <h2>This is Calo-Web, the calories calculator.</h2>
+      <h3>It has never been easier to take care of yourself! Monitorize your meals, calculate consumed calories, acheive goals.</h3>
+      <img class="logo-page" alt="Roate fructe/legume" src="logo.png" width="250" height="250">
+      <div class="left-wheel" ></div>
+      <div class="right-wheel"></div>
+  </div>
+  <script>
+    window.onscroll = function() {myFunction()};
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+          navbar.classList.remove("sticky");
+        }
+    }
+  </script>
 </body>
 </html>

@@ -1,11 +1,9 @@
-@font-face 
-{
+@font-face {
     font-family: Nova;
     src: url("Nova.otf") format("opentype");
 }
 
-body
-{    
+body{    
   background-color: #D7F1D0;
   background-size: cover;                  
   background-repeat: no-repeat;
@@ -14,130 +12,9 @@ body
   overflow-y: scroll;
 }
 
-.container-header {
-  width: 100%;
-  margin: 0 auto;
-  color: white;
-   
-}
-
-.container{
-    
-    height:100%;
-    text-align:left;
-    overflow: hidden;
-    position:relative;
-    width:100%;
-    margin:auto;
-    display: grid;
-   grid-template-columns: auto auto;
-   margin-top: 5%;
-}
-
-
-.pararaphs
-{
-  text-align: right;
-  width: 50%;
-}
-
-p{
-  height: 12.7%;
-  font-size: 20px;
-  font-family: Nova;
-  text-align: right;
-  margin-right: 20px;
-}
-
-.boxes
-{
-  width: 50%;
-}
-
-.buttonsave
-{
-  width:100%;
-  text-align: right;
-  margin-right: 2px;
-}
-
-.buttonedit
-{
-  width:100%;
-  text-align: left;
-  margin-left: 2px;
-}
-
-
-input[type=text]
-{
-  width: 60%;
-  padding: 12px 10px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-}
-
-input[type=number]
-{
-  width: 25%;
-  padding: 12px 10px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-
-}
-
-input[type=email]
-{
-  width: 60%;
-  padding: 12px 10px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-
-}
-
-input[type=password]
-{
-  width: 60%;
-  padding: 12px 10px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-
-}
-
-.SaveButton
-{
-  width: 100px;
-  padding: 10px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #555;  
+header{
   background-color: rgb(20,70,34);
-  color: white;
-  font-family: Nova;
-}
-
-.EditButton
-{
-  width: 100px;
-  padding: 10px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #555;  
-  background-color: rgb(20,70,34);
-  color: white;
-  font-family: Nova;
-}
-
-
-header {
-  background-color: rgb(20,70,34);
- 
   margin:  auto;
-  
 }
 
 header::after {
@@ -145,7 +22,6 @@ header::after {
   display: table;
   clear: both;
 }
-
 
 nav {
   text-align:center;
@@ -170,8 +46,7 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 20px;
-  padding-bottom:0px;
-  
+  padding-bottom:0px;  
 }
 
 nav a:hover {
@@ -183,11 +58,9 @@ nav a::before {
   display: block;
   height: 5px;
   background-color:rgb(242,252,245);
-
   position: absolute;
   top: 0;
   width: 0%;
-
   transition: all ease-in-out 250ms;
 }
 
@@ -195,118 +68,196 @@ nav a:hover::before {
   width: 100%;
 }
 
-
-@media screen and (max-width: 1100px){
-nav li {
-  margin-left: 20px;
-  margin-right:20px;
-  padding-top: 15px;
-  padding-bottom:0px;
-  
+p{
+  height: 12.7%;
+  font-size: 20px;
+  font-family: Nova;
+  text-align: right;
+  margin-right: 20px;
 }
-
-nav a{ 
-font-size: 20px;}
 
 .container-header{
+  width: 100%;
+  margin: 0 auto;
+  color: white;
+}
+
+.container{
+  height:100%;
+  text-align:left;
+  overflow: hidden;
+  position:relative;
+  width:100%;
+  margin:auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 5%;
+}
+
+.pararaphs{
+  text-align: right;
+  width: 50%;
+}
+
+.SaveButton{
+  width: 100px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;  
+  background-color: rgb(20,70,34);
+  color: white;
+  font-family: Nova;
+}
+
+.EditButton{
+  width: 100px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #555;  
+  background-color: rgb(20,70,34);
+  color: white;
+  font-family: Nova;
+}
+
+.boxes{
+  width: 50%;
+}
+
+.buttonsave{
+  width:100%;
+  text-align: right;
+  margin-right: 2px;
+}
+
+.buttonedit
+{
+  width:100%;
+  text-align: left;
+  margin-left: 2px;
+}
+
+input[type=text]{
+  width: 60%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+}
+
+input[type=number]{
+  width: 25%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+}
+
+input[type=email]{
+  width: 60%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+}
+
+input[type=password]{
+  width: 60%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+}
+
+@media screen and (max-width: 1100px){
+	nav li {
+  	margin-left: 20px;
+  	margin-right:20px;
+  	padding-top: 15px;
+  	padding-bottom:0px;  
+	}
+
+	nav a{ 
+		font-size: 20px;
+	}
+
+	.container-header{
     margin-bottom:0px;
-}
+	}
 
-input[type=text]
-{
-  width: 100%;
-}
+	input[type=text]{
+  	width: 100%;
+	}
 
-input[type=number]
-{
+	input[type=number]{
   width: 65%;
-}
+	}
 
-input[type=email]
-{
+	input[type=email]{
   width: 100%;
-}
+	}
 
-input[type=password]
-{
+	input[type=password]{
   width: 100%;
-}
-
+	}
 }
 
 @media screen and (max-width: 800px){
-    nav li {
-  margin-left: 10px;
-  margin-right:5px;
-  padding-top: 15px;
-  padding-bottom:0px;
-  
-}
+  nav li {
+  	margin-left: 10px;
+  	margin-right:5px;
+  	padding-top: 15px;
+  	padding-bottom:0px; 
+	}
 
-input[type=text]
-{
+	input[type=text]{
+  	width: 100%;
+	}
+
+	input[type=number]{
+  	width: 65%;
+	}
+
+	input[type=email]{
+  	width: 100%;
+	}
+
+	input[type=password]{
   width: 100%;
-}
-
-input[type=number]
-{
-  width: 65%;
-}
-
-input[type=email]
-{
-  width: 100%;
-}
-
-input[type=password]
-{
-  width: 100%;
-}
-
-    
-   
-  
-        
-        
+	}      
 }
 
 @media screen and (max-width: 600px){
-    nav li {
-  margin-left: 8px;
-  margin-right:5px;
-  padding-top: 15px;
-  padding-bottom:0px;
-  
-}
+  nav li {
+  	margin-left: 8px;
+  	margin-right:5px;
+  	padding-top: 15px;
+  	padding-bottom:0px; 
+	}
     
-    nav a{
-    font-size:18px;}
+  nav a{
+    font-size:18px;
+  }
 
+	input[type=text]{
+  	width: 100%;
+	}
 
-input[type=text]
-{
-  width: 100%;
-}
+	input[type=number]{
+  	width: 65%;
+	}
 
-input[type=number]
-{
-  width: 65%;
-}
+	input[type=email]{
+  	width: 100%;
+  }
 
-input[type=email]
-{
-  width: 100%;
-}
+	input[type=password]{
+  	width: 100%;
+	}
 
-input[type=password]
-{
-  width: 100%;
-}
-
-p
-{
-  font-size: 15px;
-  height: 15%;
-}
-        
+	p{
+  	font-size: 15px;
+  	height: 15%;
+	}      
 }

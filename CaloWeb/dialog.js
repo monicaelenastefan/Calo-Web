@@ -18,6 +18,7 @@ function CustomAlert(){
 		document.getElementById('dialogoverlay').style.display = "none";
 	}
 }
+
 var Alert = new CustomAlert();
 
 function CustomConfirm(){
@@ -48,10 +49,8 @@ function CustomConfirm(){
 		document.getElementById('dialogoverlay').style.display = "none";
 	}
 }
+
 var Confirm = new CustomConfirm();
-
-
-
 
 function CustomPrompt(){
 	this.render = function(dialog,func){
@@ -111,4 +110,5 @@ function CustomPrompt(){
 		document.getElementById('dialogoverlay').style.display = "none";
 	}
 }
+
 var Prompt = new CustomPrompt();

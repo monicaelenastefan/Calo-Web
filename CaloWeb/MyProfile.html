@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	
 	<title>My Profile Calo'Web</title>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" href="MyProfile.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="MyProfile.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 	<header>
 	 	<div class="container-header">
-        	<nav>
-            	<ul>
-            		<li><a href="MyProfile.html">My Profile</a><li>
-					<li><a href="index.html">Timeline</a><li>
+      <nav>
+        <ul>
+          <li><a href="MyProfile.html">My Profile</a><li>
+					<li><a href="Timeline.html">Timeline</a><li>
 					<li><a href="MyPlans.html">My Plans</a><li>
 					<li><a href="Calo-Web.html">Sign Out</a><li>
 					<li>Username </li>
-            	</ul>
-        	</nav>
-     	</div>
+        </ul>
+      </nav>
+    </div>
 	</header>	
 
 	<div class="container">
@@ -38,24 +39,22 @@
 			<input type="number" name="weight" value="65" readonly><br>
 		</div>
 		<div class="buttonsave">
-			<input class="SaveButton" type="submit" value="Save" onclick="myFunction1()">
+			<input class="SaveButton" type="submit" value="Save" onclick="myFunction()">
 		</div>
 		<div class="editbutton">
-			<input class="EditButton" type="submit" value="Edit" onclick="myFunction()">
+			<input class="EditButton" type="submit" value="Edit" onclick="myFunction1()">
 		</div>
 		<script>
-			function myFunction()
+			function myFunction1()
 			{
 				document.getElementById("toedit").readOnly=false;
 			}
-			function myFunction1()
+			function myFunction()
 			{
 				document.getElementById("toedit").readOnly=true;
 			}
 		</script>
-
-
-
 	</div>
+	
 </body>
 </html>
