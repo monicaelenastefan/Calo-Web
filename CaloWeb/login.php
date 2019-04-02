@@ -8,15 +8,15 @@ if(isset($_POST['submit'])){
     
     include "config.php" ;
 
-    //$email = mysqli_real_escape_string($conn, $_POST["email"]);
-	//$password = mysqli_real_escape_string($conn, $_POST["password"]);
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+	$password = mysqli_real_escape_string($conn, $_POST["password"]);
     
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    //$email = $_POST['email'];
+    //$password = $_POST['password'];
   
     if (empty($email) || empty($password) ){
     
-        header("Location: SignIn.php?login=empty");
+        header("Location: SignIn.php?login= Please fill in the blanks!");
         exit();
     }
     else{
@@ -28,17 +28,26 @@ if(isset($_POST['submit'])){
     }
     
     if ($resultCheck <1){
-        header("Location: SignIn.php?login=ue");
+        header("Location: SignIn.php?login= Invalid account!");
         exit();
     }
     else{
-        $_SESSION['u_email'] = $row['email'];
-				
-        header("Location: MyPlans.php");
-        exit();
-    }
+        if ($row = mysqli_fetch_assoc($result)){
+				$hashedPwdCheck = password_verify($pwd, $row['password']);
+
+				if ($hashedPwdCheck == false){
+					header("Location: SignIn.php?login= Invalid password!");
+					exit();
+				}
+                elseif($hashedPwdCheck == true){
+                    $_SESSION['u_email'] = $row['email'];
+                    $_SESSION['u_first'] = $row['firstname'];
+                    header("Location: MyPlans.php");
+                    exit();
+                }
+        }
        
-    
+    } 
 }
 
 
