@@ -4,7 +4,7 @@
 
 <head>
     <title>SignIn to Calo'Web</title>
-    <link rel="stylesheet" href="SignIn.css">
+    <link rel="stylesheet" href="SignUpSignIn.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -17,7 +17,7 @@
                     <li><a href="Features.html">Features</a><li>
                     <li><a href="index.html">Home</a><li>
                     <li><a href="SignIn.php">Sign In</a><li>
-                    <li><a href="SignUp.html">Sign Up</a><li>
+                    <li><a href="SignUp.php">Sign Up</a><li>
                 </ul>
             </nav>
         </div>       
@@ -34,8 +34,20 @@
                 <input type="text" name="email" id="email" placeholder="E-mail..">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password"  placeholder="Password..">
-                <input id="button-log" type="submit" name="submit" value="SUBMIT">
+                <input type="submit" name="submit" value="SUBMIT" class="SubmitButton">
             </form>
+            
+            <?php
+        
+                if(@$_GET['login']==true)
+                {
+            ?>
+                <div  class="notification"> <?php echo $_GET['login'] ?> 
+                </div>
+            <?php
+                }
+        
+            ?>
         </div>
     </div>
 </body>

@@ -117,6 +117,16 @@ nav a:hover::before{
   margin: auto auto;
 }
 
+.center-text{
+  font-family: Nova;
+  position: relative;
+  text-align: center;
+  color: rgb(20,70,34);
+  font-size:60px;
+  padding-top:110px;
+}    
+
+
 .input_data{
   font-family: Nova;
   text-align: center;
@@ -127,15 +137,15 @@ nav a:hover::before{
 .details{
   font-family: Nova;
   text-align: center;
-  width:115%;
+  width:100%;
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
 .grid-item{
   text-align: center;
+  
 }
-
 .SubmitButton{
   width: 100px;
   padding: 10px 20px;
@@ -145,36 +155,45 @@ nav a:hover::before{
   background-color: rgb(20,70,34);
   color: white;
   font-family: Nova;
+  cursor:pointer;
 }
 
+.notification{
+    
+    text-align:center;
+    font-size:15px;
+}
+
+
 input[type=text]{
-  width: 115%;
+  width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 5px 0;
   box-sizing: border-box;
   border: 3px solid #555;
 }
 
 input[type=number]{
   width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0px;
+  padding-top:10px;
+  padding-bottom:10px;
   box-sizing: border-box;
   border: 3px solid #555;
+  text-align:center;
 }
 
 input[type=email]{
-  width: 115%;
+  width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 5px 0;
   box-sizing: border-box;
   border: 3px solid #555;
 }
 
 input[type=password]{
-  width: 115%;
+  width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 5px 0;
   box-sizing: border-box;
   border: 3px solid #555;
 }
@@ -272,5 +291,19 @@ input[type=password]{
 
 @media only screen and (max-width: 850px){
   .left-wheel{opacity: 0;}
-  .right-wheel{opacity: 0;}  
+  .right-wheel{opacity: 0;} 
+  .input_data{
+      margin: 60px auto;
+      width: 50%;
+      
+}
+
+@media only screen and (max-width: 650px){
+    .input_data{
+      margin: 60px auto;
+      width: 60%;
+    }
+    
+}
+    
 }
