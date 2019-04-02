@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +23,7 @@
           <li><a href="Timeline.html">Timeline</a><li>
           <li><a href="MyPlans.html">My Plans</a><li>
           <li><a href="Calo-Web.html">Sign Out</a><li>
-          <div class="Username">Username </div>
+          <div class="Username"><?php echo $_SESSION['u_email'];?> </div>
         </ul>
       </nav>
     </div>     
