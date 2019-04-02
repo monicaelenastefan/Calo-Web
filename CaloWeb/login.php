@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
     }
     else{
         if ($row = mysqli_fetch_assoc($result)){
-				$hashedPwdCheck = password_verify($pwd, $row['password']);
+				$hashedPwdCheck = password_verify($password, $row['password']);
 
 				if ($hashedPwdCheck == false){
 					header("Location: SignIn.php?login= Invalid password!");

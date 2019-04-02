@@ -46,7 +46,7 @@
                         //verificam daca parola e aceeasi cu cea confirmata
                         if($password == $confirmpassword){
                             //hash pass
-                            $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+                            $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
                             //Toate datele de pana acum au fost introduse corecte
                             //Introducem datele in baza de date
                             $sql = "INSERT INTO users (firstname, lastname, email, password, age, weight, height) VALUE ('$first', '$last', '$email', '$hashedPwd', '$age', '$weight', '$height');";

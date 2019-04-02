@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +18,13 @@
 	 	<div class="container-header">
       <nav>
         <ul>
-          <li><a href="MyProfile.html">My Profile</a><li>
-					<li><a href="Timeline.html">Timeline</a><li>
-					<li><a href="MyPlans.html">My Plans</a><li>
-					<li><a href="Calo-Web.html">Sign Out</a><li>
-					<li>Username </li>
+          <li><a href="MyProfile.php">My Profile</a><li>
+					<li><a href="Timeline.php">Timeline</a><li>
+					<li><a href="MyPlans.php">My Plans</a><li>
+					<li>
+                        <a href="logout.php">Sign Out</a>
+                    <li>
+                    <div class="Username"><?php echo $_SESSION['u_first'];?> </div>
         </ul>
       </nav>
     </div>
