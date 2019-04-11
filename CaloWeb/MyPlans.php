@@ -31,7 +31,7 @@ session_start();
   
   <div class="container">
     <div class="container-create-button">
-      <div id="create-button">Create Plan</div>
+      <div id="create-button" onclick="createItem()">Create Plan</div>
     </div>
     <div class="container-plans">     
       <div class="plan">Sample</div>
@@ -100,7 +100,7 @@ session_start();
         <input type="checkbox" >
       </div>
       <form>
-        <input type="button" value="CREATE" class="CreateButton" onclick="window.location.href='MyPlans.html'">
+        <input type="button" name="submit" value="CREATE" class="CreateButton" onclick="window.location.href='MyPlans.html'">
       </form>
     </div>  
   </div>
