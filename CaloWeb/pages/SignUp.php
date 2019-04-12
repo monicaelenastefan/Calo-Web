@@ -3,7 +3,7 @@
 
 <head>
   <title>SignUp to Calo'Web</title>
-  <link rel="stylesheet" href="SignUpSignIn.css">
+  <link rel="stylesheet" href="../css/SignUpSignIn.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -13,10 +13,10 @@
     <div class="container-header"> 
       <nav>
         <ul>
-          <li><a href="Features.html">Features</a><li>
-          <li><a href="index.html">Home</a><li>
-          <li><a href="SignIn.php">Sign In</a><li>
-          <li><a href="SignUp.php">Sign Up</a><li>       
+          <li><a href="../pages/Features.html">Features</a><li>
+          <li><a href="../index.html">Home</a><li>
+          <li><a href="../pages/SignIn.php">Sign In</a><li>
+          <li><a href="../pages/SignUp.php">Sign Up</a><li>       
         </ul>
       </nav>
     </div>      
@@ -28,7 +28,7 @@
 
     <div class="input_data">
       
-      <form action="createAccount.php" method="post" >
+      <form action="../scripts/createAccount.php" method="post" >
       
       First name: <input type="text" name="first" placeholder="Enter First Name here..."><br>
         

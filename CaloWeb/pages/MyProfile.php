@@ -9,7 +9,7 @@ session_start();
 <head>
 	<title>My Profile Calo'Web</title>
 	<meta charset="UTF-8">
-  <link rel="stylesheet" href="MyProfile.css">
+  <link rel="stylesheet" href="../css/MyProfile.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 

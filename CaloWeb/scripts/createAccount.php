@@ -2,7 +2,7 @@
 
     if(isset($_POST['submit'])){
         
-        include_once 'config.php';
+        include_once '../scripts/config.php';
         $first=mysqli_real_escape_string($conn, $_POST['first']);
         $last=mysqli_real_escape_string($conn, $_POST['last']);
         $email=mysqli_real_escape_string($conn, $_POST['email']);
@@ -17,19 +17,19 @@
         
         if (empty($first) || empty($last) || empty($email) || empty($password) || empty($age) || empty($weight) || empty ($height)){
         
-            header("Location: SignUp.php?signup= Please fill in the blanks!");
+            header("Location: /pages/SignUp.php?signup= Please fill in the blanks!");
             exit();
         }
         else{
             //verificam daca datele sunt introduse corect
             if(!preg_match("/^[a-zA-Z]*$/", $first) || !preg_match("/^[a-zA-Z]*$/", $last)){
-                header("Location: SignUp.php?signup= Invalid First Name or Last Name!");
+                header("Location: /pages/SignUp.php?signup= Invalid First Name or Last Name!");
                 exit();
             }
             else{
                 //verificam daca email-ul este valid
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-				header("Location: SignUp.php?signup= Invalid E-mail!");
+				header("Location: /pages/SignUp.php?signup= Invalid E-mail!");
 				exit();
                 }
                 else{
@@ -39,7 +39,7 @@
                     $resultCheck = mysqli_num_rows($result);
             
                     if ($resultCheck > 0){
-					header("Location: SignUp.php?signup= This account already exists!");
+					header("Location: /pages/SignUp.php?signup= This account already exists!");
 					exit();
                     }
                     else{
@@ -51,11 +51,11 @@
                             //Introducem datele in baza de date
                             $sql = "INSERT INTO users (firstname, lastname, email, password, age, weight, height) VALUE ('$first', '$last', '$email', '$hashedPwd', '$age', '$weight', '$height');";
                             mysqli_query($conn, $sql);
-                            header("Location: SignUp.php?signup=Your account has been created!");
+                            header("Location: /pages/SignUp.php?signup=Your account has been created!");
                             exit();
                         }
                         else{
-                            header("Location: SignUp.php?signup= Passwords do not match!");
+                            header("Location: /pages/SignUp.php?signup= Passwords do not match!");
                             exit();
                         }
                     }    
@@ -64,7 +64,7 @@
         }
     }
     else{
-        header("Location: SignUp.php?signup=sub");
+        header("Location: /pages/SignUp.php?signup=sub");
         exit();
     }
     

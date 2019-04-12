@@ -9,7 +9,7 @@ session_start();
 <head>
 	<title>Calo'Web</title>
 	<meta charset="UTF-8">
-  <link rel="stylesheet" href="Timeline.css">
+  <link rel="stylesheet" href="../css/Timeline.css">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
 </head>
 
@@ -18,10 +18,10 @@ session_start();
     <div class="container-header">  
       <nav>
         <ul>
-          <li><a href="MyProfile.php">My Profile</a><li>
-          <li><a href="Timeline.php">Timeline</a><li>
-          <li><a href="MyPlans.php">MyPlans</a><li>
-          <li><a href="logout.php">Sign Out</a><li>
+          <li><a href="../pages/MyProfile.php">My Profile</a><li>
+          <li><a href="../pages/Timeline.php">Timeline</a><li>
+          <li><a href="../pages/MyPlans.php">MyPlans</a><li>
+          <li><a href="../scripts/logout.php">Sign Out</a><li>
           <div class="Username"><?php echo $_SESSION['u_first'];?> </div>       
         </ul>
       </nav>

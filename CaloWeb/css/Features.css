@@ -1,6 +1,6 @@
 @font-face {
   font-family: Nova;
-  src: url("Nova.otf") format("opentype");
+  src: url("/images-fonts/Nova.otf") format("opentype");
 }
 
 body
