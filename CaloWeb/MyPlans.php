@@ -7,10 +7,10 @@ session_start();
 <html lang="en">
 
 <head>
-  
   <title>MyPlans</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/MyPlans.css">
+  <link rel="stylesheet" href="dialog.css">
+  <link rel="stylesheet" href="MyPlans.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -19,10 +19,10 @@ session_start();
     <div class="container-header"> 
       <nav>
         <ul>
-          <li><a href="../pages/MyProfile.php">My Profile</a><li>
-          <li><a href="../pages/Timeline.php">Timeline</a><li>
-          <li><a href="../pages/MyPlans.php">My Plans</a><li>
-          <li><a href="../scripts/logout.php">Sign Out</a><li>
+          <li><a href="MyProfile.php">My Profile</a><li>
+          <li><a href="Timeline.php">Timeline</a><li>
+          <li><a href="MyPlans.php">My Plans</a><li>
+          <li><a href="logout.php">Sign Out</a><li>
           <div class="Username"><?php echo $_SESSION['u_first'];?> </div>
         
         </ul>
@@ -32,30 +32,15 @@ session_start();
   
   <div class="container">
     <div class="container-create-button">
-    <div>
-    <?php
-        
-        if(@$_GET['signup']==true)
-        {
-        ?>
-           <div  class="notification"> <?php echo $_GET['signup'] ?> 
-           </div>
-        <?php
-        }
-        
-        ?>
+      <div id="create-button" onclick="createItem()">Create Plan</div>
     </div>
-      <div id="create-button" onclick="myFunction()">Create Plan</div>
-    </div>
-    <button onclick="myFunction()">Try it</button>
-
-    <div class="container-plans" id="CevaNou">     
-      <div class="plan" id="plan">Sample</div>
+    <div class="container-plans">     
+      <div class="plan">Sample</div>
       <div class="plan">Sample</div>
       <div class="plan">Sample</div>
     </div>  
   </div>
-  <form action="../scripts/generatePlans.php" method="get">
+  <form action="generatePlans.php" method="get">
 
   <div class="bg-modal">   
     <div class="modal-content"> 
@@ -87,7 +72,7 @@ session_start();
    
       <div class="container-field">Gender:
       <label>Male<input type="checkbox" name="colors[]" id="color" value="Male"></label>
-      <label>Female<input type="checkbox" name="colors[]" id="color" value="Female"></label>
+      <label>Female<input type="checkbox" name="colors[]" id="color" value="Female  "></label>
 
         <!-- <label for="gender"> Male</label>
         <input type="checkbox" id="gender"> 
@@ -130,24 +115,22 @@ session_start();
         <input type="checkbox" > -->
       </div>
       
-        <input type="submit" name="submit" value="CREATE" class="CreateButton" onclick="myFunction();" />
+        <input type="submit" name="submit" value="CREATE" class="CreateButton" onclick="window.location.href='MyPlans.php'">
       </form>
-      
-
     </div>  
   </div>
   <div class="close">+</div>  
   </div>
   </div>
   <div class="plan-modal">
-    <div class="modal-content" >
+    <div class="modal-content">
       <div class="container-form"> 
         <div class="container-plan-name"> Plan information: </div>
-        <div class="container-plan-info"  >
+        <div class="container-plan-info"> 
           <table id="planInfo">
             <tr>
               <td> Name</td>
-              <td> <?php echo $_SESSION['Name'];?> </td>
+              <td> Sample </td>
             </tr>
             
             <tr>
@@ -203,31 +186,5 @@ session_start();
         document.querySelector('.plan-modal').style.display= 'none';
     });
   </script>
-
-<script>
-  function myFunction(){
-// var div = document.createElement("div");
-// div.style.width = "100px";
-// div.style.height = "100px";
-// div.style.background = "red";
-// div.style.color = "white";
-// div.innerHTML = "Hello";
-// document.getElementById("CevaNou").appendChild(div);
-
-var elmnt = document.getElementById("plan");
-  var cln = elmnt.cloneNode(true);
-
-  var element = document.getElementById("CevaNou");
-  element.appendChild(cln);
-
-  }
-</script>
-
-
-
 </body>
 </html>
-
-
-
-

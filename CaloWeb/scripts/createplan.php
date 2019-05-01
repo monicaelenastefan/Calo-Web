@@ -14,7 +14,7 @@
       
        if (empty($first) || empty($last) || empty($email) || empty($password) || empty($age) || empty($weight) || empty ($height)){
         
-            header("Location: SignUp.php?signup= Please fill in the blanks!");
+            header("Location: ../pages/MyPLans.php?signup= Please fill in the blanks!");
             exit();
         }
       

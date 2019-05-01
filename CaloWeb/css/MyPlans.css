@@ -4,12 +4,13 @@
 }
 
 html {
- overflow-y : hidden;
+ overflow : scroll;
 }
 
 body{   
   margin:0;
   background-image: linear-gradient(to bottom, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #d7f1d0, #c6e1c0, #b5d2b0, #a4c3a0, #7fa27e, #5c825d, #39633f, #144622);
+  overflow: scroll;
 }
 
 header {
@@ -77,8 +78,8 @@ nav a:hover::before {
 .container{
   height:95vh;
   width:100%;
-  overflow-x:auto;
-  overflow-y: hidden;
+  overflow-x:scroll;
+  overflow-y: scroll;
   flex-wrap: nowrap;
   position: relative;
   margin: auto;
@@ -126,7 +127,7 @@ nav a:hover::before {
   bottom:0px;
   border: 3px solid rgb(20,70,34);
   border-radius:4px;
-  overflow:hidden;
+  overflow:scroll;
 }
 
 .container-plan-name{
@@ -172,7 +173,7 @@ nav a:hover::before {
   position: absolute;
   position: absolute;
   left:0;
-  overflow:hidden;
+  overflow:scroll;
   z-index:1;
   display:flex;
   justify-content:center;
@@ -190,7 +191,7 @@ nav a:hover::before {
   position: absolute;
   position: absolute;
   left:0;
-  overflow:hidden;
+  overflow:scroll;
   z-index:1;
   display:flex;
   justify-content:center;
@@ -208,7 +209,7 @@ nav a:hover::before {
   position: absolute;
   position: absolute;
   left:0;
-  overflow:hidden;
+  overflow:scroll;
   z-index:1;
   display:flex;
   justify-content:center;
@@ -257,7 +258,7 @@ nav a:hover::before {
   bottom:0px;
   border: 3px solid rgb(20,70,34);
   border-radius:4px;
-  overflow:auto;
+  overflow:scroll;
 }
 
 .container-buttons{
@@ -330,7 +331,7 @@ nav a:hover::before {
   position: absolute;
   position: absolute;
   left:0;
-  overflow:hidden;
+  overflow:scroll;
   z-index:1;
   display:flex;
   justify-content:center;
@@ -373,7 +374,7 @@ nav a:hover::before {
   width: 100%;
   height:100%;
   position: absolute;
-  overflow-y: auto; 
+  overflow: scroll; 
 }
 
 #planInfo td{
@@ -389,7 +390,7 @@ nav a:hover::before {
   background-color: #ddd;
 }
 
-input[type=button]{
+input[type = submit]{
   width: 100px;
   padding: 10px 20px;
   margin: 8px 0;
@@ -490,7 +491,7 @@ input[type=text] {
 @media only screen and (max-height: 949px) {
   .list ul li {height: 20px; font-size: 15px; width: 220px;} 
   .list header {width: 250px;height: 40px;} 
-  .list ul {width: 250px;height: 350px; overflow-y: scroll; overflow-x: hidden;}
+  .list ul {width: 250px;height: 350px; overflow-y: scroll; overflow-x: scroll;}
   .list footer{width: 250px;height: 40px;}
 }
 
