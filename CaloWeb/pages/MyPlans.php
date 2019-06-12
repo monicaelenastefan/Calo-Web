@@ -60,15 +60,12 @@ $_SESSION['count'] = 1;
       
         //  $result = mysqli_num_rows($result);
         //echo $data['total'];
+        $_SESSION['date'] = $data['total'];
 
-
-      for($i = 1; $i <= $data['total']; $i++){
-        $_SESSION['linie'] = $i;
+     
       ?>         
        <div class="plan">Sample</div> 
-      <?php   
-            }
-       ?>
+     
     </div>  
   </div>
   <form action="../scripts/generatePlans.php" method="get">
@@ -165,7 +162,7 @@ $_SESSION['count'] = 1;
         <table id="planInfo">
             <tr>
             <?php
-  while($_SESSION['count'] <= 3){
+  while($_SESSION['count'] <= $_SESSION['date']){
   ?>
               <td> Name</td>
               <td> <?php 
@@ -174,14 +171,12 @@ $_SESSION['count'] = 1;
               $email = $_SESSION['u_email'];
               $sql= "SELECT tablename from myplans1 WHERE firstname like '$email'";
               $result = mysqli_query($conn, $sql);
-              $i = 0; 
+              $i = 1; 
 
               while($row = $result->fetch_assoc()) {
                 //echo $_SESSION['linie'];
-                if($i = $_SESSION['count']){
+                if($i === $_SESSION['count']){
                  
-                  echo $i;
-                  echo $_SESSION['count'];
                   echo $row["tablename"];
                   break;
                 }
