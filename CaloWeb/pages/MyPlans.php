@@ -45,14 +45,28 @@ session_start();
         
         ?>
     </div>
-      <div id="create-button" onclick="myFunction()">Create Plan</div>
+      <div id="create-button" >Create Plan</div>
     </div>
-    <button onclick="myFunction()">Try it</button>
 
-    <div class="container-plans" id="CevaNou">     
-      <div class="plan" id="plan">Sample</div>
-      <div class="plan">Sample</div>
-      <div class="plan">Sample</div>
+    <div class="container-plans" id="CevaNou"> 
+      <?php
+      include_once '../scripts/config.php';
+      $email = $_SESSION['u_email'];
+      
+      $sql= "SELECT count(*) as total from myplans1 WHERE firstname like '$email'";
+        $result = mysqli_query($conn, $sql);
+        $data=mysqli_fetch_assoc($result);
+      
+        //  $result = mysqli_num_rows($result);
+        //echo $data['total'];
+
+
+      for($i = 1; $i <= $data['total']; $i++){
+      ?>         
+       <div class="plan">Sample</div> 
+      <?php   
+            }
+       ?>
     </div>  
   </div>
   <form action="../scripts/generatePlans.php" method="get">
