@@ -64,7 +64,7 @@ $_SESSION['count'] = 1;
 
      
       ?>         
-       <div class="plan">Sample</div> 
+       <div class="plan">Plans</div> 
      
     </div>  
   </div>
@@ -290,7 +290,10 @@ $_SESSION['count'] = 1;
           </table>
         </div>
         <div class="container-buttons"> 
-          <div class="aec-button">Export to XML </div>
+          <form class="" action="Functie.php" method="post">
+          <!-- <div class="aec-button">Export to XML</div> -->
+          <button type="submit" class="aec-button" name="button">Export to XML</button>
+          </form>
         </div>
       </div>
       <div class="close-plan">+</div>
