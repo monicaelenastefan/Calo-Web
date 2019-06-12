@@ -49,21 +49,22 @@ $_SESSION['count'] = 1;
     </div>
  
 
+    
+
     <div class="container-plans" id="CevaNou"> 
       <?php
       include_once '../scripts/config.php';
       $email = $_SESSION['u_email'];
+      
       $sql= "SELECT count(*) as total from myplans1 WHERE firstname like '$email'";
         $result = mysqli_query($conn, $sql);
-       // echo $result;
-         $data=mysqli_fetch_assoc($result);
+        $data=mysqli_fetch_assoc($result);
       
         //  $result = mysqli_num_rows($result);
         //echo $data['total'];
 
 
       for($i = 1; $i <= $data['total']; $i++){
-        $_SESSION['linie'] = $i;
       ?>         
        <div class="plan">Sample</div> 
       <?php   
