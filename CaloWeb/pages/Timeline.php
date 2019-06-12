@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ini_set('memory_limit','16M');
 ?>
 
 <!DOCTYPE html>
@@ -28,30 +28,57 @@ session_start();
     </div>
   </header>	
 
-	<div class="lists">	
-		<div class="list">
-			<h4>Sample:Week 1</h4>
-		    <ul>
-				  <li>Day 1: Monday(17.03.2019): 1320 kcal</li>
-				  <li>Day 2: Tuesday(18.03.2019):1450 kcal</li>
-				  <li>Day 3: Wednesday(19.03.2019): 1620 kcal</li>
-				  <li>Day 4: Thursday(20.03.2019): 1550 kcal</li>
-				  <li>Day 5: Friday(21.03.2019): 1750 kcal</li>
-				  <li>Day 6: Saturday(22.03.2019): 1900 kcal</li>
-				  <li>Day 7: Sunday(23.03.2019): 1100 kcal</li>
-			  </ul>
-			<footer>Average week: 1527 kcal</footer>
-		</div>
-		
-		<div class="list">
-			<h4>Sample:Week 2</h4>
-			<ul>
-				<li>Day 8: Monday(24.03.2019): 1400 kcal</li>
-				<li>Day 9: Tuesday(25.03.2019): 1750 kcal</li>
-				<li>Day 10: Wednesday(26.03.2019): 1900kcal</li>
-			</ul>
-			<footer>Average week:1683 kcal</footer>
-		</div>
+  <div class="lists" id="CevaNou"> 
+      <?php
+      include_once '../scripts/config.php';
+      $email = $_SESSION['u_email'];
+
+      $planuri="SELECT * from myplans1";
+      $planuri_result= mysqli_query($conn, $planuri);
+      
+
+      //$sql= "SELECT count(*) as total from myplans1 WHERE firstname like '$email'";
+      //$tot= mysqli_query($conn, $sql);
+      //$nr_planuri=mysqli_fetch_assoc($tot);
+      $count=0;
+      while($row=mysqli_fetch_array($planuri_result))
+      { 
+        $count++;
+        
+        $plan = stripslashes($row['tablename']);
+        $emailplan=stripslashes($row['firstname']);
+        $nr_days=stripslashes($row['Sdate']);
+        $gender=stripslashes($row['gender']);
+        $restriction=stripslashes($row['restriction']);
+
+        if($count%7===1)
+          echo '<div class="list"> <h4>'.$plan.':Week '. $count .'</h4> <ul>';
+
+        $timeline="SELECT * from timeline where email like '$emailplan' and planname like '$plan'";
+        $timeline_result= mysqli_query($conn, $timeline);
+        $countdays=0;
+          while($rowtl=mysqli_fetch_array($timeline_result))
+          { 
+          $countdays++;
+          $daytl = stripslashes($rowtl['days']);
+          $foodtl = stripslashes($rowtl['food']);
+          $gramaj = stripslashes($rowtl['gramaj']);
+
+          $cal="SELECT * from food where name like '$foodtl'";
+          $calres= mysqli_query($conn, $cal);
+          $cal_data=mysqli_fetch_assoc($calres);
+          
+          $nr_calorii=intval($gramaj)*intval($cal_data['calories'])/100;
+
+          echo '<li>Day '. $countdays . ': ' . $nr_days . ' : '. $nr_calorii .'kcal</li>';
+
+
+          }
+      
+        if($count%7===1)
+          echo '</ul> <footer>Average week: 1527 kcal</footer> </div>';
+        }
+      ?>         		
   </div>  
   <div class="bg-modal">   
     <div class="modal-content"> 
