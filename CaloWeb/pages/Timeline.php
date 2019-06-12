@@ -33,7 +33,7 @@ ini_set('memory_limit','16M');
       include_once '../scripts/config.php';
       $email = $_SESSION['u_email'];
 
-      $planuri="SELECT * from myplans1";
+      $planuri="SELECT * from myplans1 WHERE firstname like '$email'";
       $planuri_result= mysqli_query($conn, $planuri);
       
 
@@ -46,38 +46,77 @@ ini_set('memory_limit','16M');
         $count++;
         
         $plan = stripslashes($row['tablename']);
+        $start_date = stripslashes($row['Sdate']);
         $emailplan=stripslashes($row['firstname']);
-        $nr_days=stripslashes($row['Sdate']);
+        $nr_days=stripslashes($row['days']);
         $gender=stripslashes($row['gender']);
         $restriction=stripslashes($row['restriction']);
 
-        if($count%7===1)
-          echo '<div class="list"> <h4>'.$plan.':Week '. $count .'</h4> <ul>';
+        if($count%7===1){
+         // echo '<div class="list"> <h4>'.$plan.':Week '. $count .'</h4> <ul>';
+
+        }
+
+
 
         $timeline="SELECT * from timeline where email like '$emailplan' and planname like '$plan'";
         $timeline_result= mysqli_query($conn, $timeline);
-        $countdays=0;
-          while($rowtl=mysqli_fetch_array($timeline_result))
-          { 
-          $countdays++;
-          $daytl = stripslashes($rowtl['days']);
-          $foodtl = stripslashes($rowtl['food']);
-          $gramaj = stripslashes($rowtl['gramaj']);
-
-          $cal="SELECT * from food where name like '$foodtl'";
-          $calres= mysqli_query($conn, $cal);
-          $cal_data=mysqli_fetch_assoc($calres);
-          
-          $nr_calorii=intval($gramaj)*intval($cal_data['calories'])/100;
-
-          echo '<li>Day '. $countdays . ': ' . $nr_days . ' : '. $nr_calorii .'kcal</li>';
-
-
-          }
+        for($j = 1; $j <= $nr_days; $j++){
+          //if(empty(mysqli_fetch_array($timeline_result)))
+            //echo '<li>Day'.$j.'</li>';    
+            if($j%7 === 1){
+              echo '<div class="list"> <h4>'.$plan.':Week '. intval($j/7 + 1) .'</h4> <ul>';
+              $countdays=0;
+              $total_calorii = 0;
+             
+                while($rowtl=mysqli_fetch_array($timeline_result))
+                { 
+               
+                $countdays++;
+                $daytl = stripslashes($rowtl['days']);
+                $foodtl = stripslashes($rowtl['food']);
+                $gramaj = stripslashes($rowtl['gramaj']);
       
-        if($count%7===1)
-          echo '</ul> <footer>Average week: 1527 kcal</footer> </div>';
+                $cal="SELECT * from food where name like '$foodtl'";
+                $calres= mysqli_query($conn, $cal);
+                $cal_data=mysqli_fetch_assoc($calres);
+                
+                $nr_calorii=intval($gramaj)*intval($cal_data['calories'])/100;
+                
+                $total_calorii += $nr_calorii;
+                echo '<li>Day '. $countdays . ': ' . date('Y-m-d',strtotime($start_date."+".$countdays." days")) . ' : '. $nr_calorii .'kcal</li>';
+                
+      
+                }
+               
+                $i = 0;
+                while($i < 7 - intval($countdays)){
+                  echo '<li>Day'.(7 - intval($countdays) - $i).'</li>';
+                  $i++;
+      
+                }
+                $media_saptamanii = 0;
+              if($i%7===0 || $i%5 === 0){
+                    if(intval($countdays) > 0){
+                    echo '</ul> <footer>Average week:'. $total_calorii/intval($countdays)   .'kcal</footer> </div>';
+                    $media_saptamanii = $total_calorii/intval($countdays);
+                  }
+                  else{
+                    echo '</ul> <footer>Average week:'. $total_calorii   .'kcal</footer> </div>';
+      
+                  }
+                }
+                $count = 0;
+                if($media_saptamanii < 600){
+                  echo '<div class="">chestie</div>';
+                }
+              }
+            }
         }
+
+
+       
+
       ?>         		
   </div>  
   <div class="bg-modal">   
