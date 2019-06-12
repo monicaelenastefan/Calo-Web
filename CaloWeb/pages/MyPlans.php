@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['count'] = 1;
 ?>
 
 <!DOCTYPE html>
@@ -45,14 +45,30 @@ session_start();
         
         ?>
     </div>
-      <div id="create-button" onclick="myFunction()">Create Plan</div>
+      <div id="create-button" >Create Plan</div>
     </div>
-    <button onclick="myFunction()">Try it</button>
+ 
 
-    <div class="container-plans" id="CevaNou">     
-      <div class="plan" id="plan">Sample</div>
-      <div class="plan">Sample</div>
-      <div class="plan">Sample</div>
+    <div class="container-plans" id="CevaNou"> 
+      <?php
+      include_once '../scripts/config.php';
+      $email = $_SESSION['u_email'];
+      $sql= "SELECT count(*) as total from myplans1 WHERE firstname like '$email'";
+        $result = mysqli_query($conn, $sql);
+       // echo $result;
+         $data=mysqli_fetch_assoc($result);
+      
+        //  $result = mysqli_num_rows($result);
+        //echo $data['total'];
+
+
+      for($i = 1; $i <= $data['total']; $i++){
+        $_SESSION['linie'] = $i;
+      ?>         
+       <div class="plan">Sample</div> 
+      <?php   
+            }
+       ?>
     </div>  
   </div>
   <form action="../scripts/generatePlans.php" method="get">
@@ -139,36 +155,143 @@ session_start();
   <div class="close">+</div>  
   </div>
   </div>
+  
   <div class="plan-modal">
     <div class="modal-content" >
       <div class="container-form"> 
         <div class="container-plan-name"> Plan information: </div>
         <div class="container-plan-info"  >
-          <table id="planInfo">
+    
+        <table id="planInfo">
             <tr>
+            <?php
+  while($_SESSION['count'] <= 3){
+  ?>
               <td> Name</td>
-              <td> <?php echo $_SESSION['Name'];?> </td>
+              <td> <?php 
+              include_once '../scripts/config.php';
+              
+              $email = $_SESSION['u_email'];
+              $sql= "SELECT tablename from myplans1 WHERE firstname like '$email'";
+              $result = mysqli_query($conn, $sql);
+              $i = 0; 
+
+              while($row = $result->fetch_assoc()) {
+                //echo $_SESSION['linie'];
+                if($i = $_SESSION['count']){
+                 
+                  echo $i;
+                  echo $_SESSION['count'];
+                  echo $row["tablename"];
+                  break;
+                }
+                else $i = $i + 1;  
+              // echo $i;
+            }
+
+        
+        ?> </td>
             </tr>
             
             <tr>
               <td> Start Date</td>
-              <td> 17/3/2019 </td>
+              <td> <?php 
+              include_once '../scripts/config.php';
+              
+              $email = $_SESSION['u_email'];
+              $sql= "SELECT Sdate from myplans1 WHERE firstname like '$email'";
+              $result = mysqli_query($conn, $sql);
+              $i = 1; 
+
+              while($row = $result->fetch_assoc()) {
+                if($_SESSION['count'] === $i){
+                  
+                  echo $row["Sdate"];
+                  break;
+                }
+                else $i = $i + 1;  
+               
+            }
+        
+        ?> </td>
             </tr> 
       
             <tr>
               <td> Duration</td>
-              <td> 10 days </td>
+              <td> <?php 
+              include_once '../scripts/config.php';
+              
+              $email = $_SESSION['u_email'];
+              $sql= "SELECT days from myplans1 WHERE firstname like '$email'";
+              $result = mysqli_query($conn, $sql);
+              $i = 1; 
+
+              while($row = $result->fetch_assoc()) {
+                if($_SESSION['count'] === $i){
+                  
+                  echo $row["days"];
+                  break;
+                }
+                else $i = $i + 1;  
+               
+            }
+        
+        ?> </td>
             </tr>
             
             <tr>
               <td> Weight on StartDate</td>
-              <td> 101 kg </td>  
+              <td> <?php 
+              include_once '../scripts/config.php';
+              
+              $email = $_SESSION['u_email'];
+              $sql= "SELECT weight from myplans1 WHERE firstname like '$email'";
+              $result = mysqli_query($conn, $sql);
+              $i = 1; 
+
+              while($row = $result->fetch_assoc()) {
+                if($_SESSION['count'] === $i){
+                  
+                  echo $row["weight"];
+                  break;
+                }
+                else $i = $i + 1;  
+               
+            }
+        
+        ?> </td>  
             </tr>
             
             <tr>
               <td> Restrictions </td>
-              <td> None </td>  
+              <td> <?php 
+              include_once '../scripts/config.php';
+              
+              $email = $_SESSION['u_email'];
+              $sql= "SELECT restriction from myplans1 WHERE firstname like '$email'";
+              $result = mysqli_query($conn, $sql);
+              $i = 1; 
+
+              while($row = $result->fetch_assoc()) {
+                if($_SESSION['count'] === $i){
+                  
+                  echo $row["restriction"];
+                  break;
+                }
+                else $i = $i + 1;  
+               
+            }
+        
+        ?> </td>  
             </tr>
+            <?php 
+            // $count = $_SESSION['count'];
+            // $count = $count - 1;
+            // $_SESSION['count'] = $count;
+            $_SESSION['count'] = $_SESSION['count'] + 1;
+           
+          }
+            ?>
           </table>
         </div>
         <div class="container-buttons"> 
@@ -204,24 +327,7 @@ session_start();
     });
   </script>
 
-<script>
-  function myFunction(){
-// var div = document.createElement("div");
-// div.style.width = "100px";
-// div.style.height = "100px";
-// div.style.background = "red";
-// div.style.color = "white";
-// div.innerHTML = "Hello";
-// document.getElementById("CevaNou").appendChild(div);
 
-var elmnt = document.getElementById("plan");
-  var cln = elmnt.cloneNode(true);
-
-  var element = document.getElementById("CevaNou");
-  element.appendChild(cln);
-
-  }
-</script>
 
 
 

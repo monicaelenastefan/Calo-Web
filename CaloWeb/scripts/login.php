@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     }
     else{
         
-        $sql= "SELECT * from users WHERE email='$email'";
+        $sql= "SELECT  * from users WHERE email='$email'";
         $result= mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         echo $resultCheck ;
