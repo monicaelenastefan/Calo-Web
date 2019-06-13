@@ -1,6 +1,45 @@
 <?php
 session_start();
+include_once '../scripts/config.php';
+$email = $_SESSION['u_email'];
+$sql= "SELECT * from timeline WHERE email like '$email'";
+$result = mysqli_query($conn, $sql);
+$count = 0;
+$suma = 0;
+while($row = $result->fetch_assoc()){
+	$count++;
+	$food= $row["food"];
+	$sql1= "SELECT * from food WHERE name like '$food'";
+	$result1 = mysqli_query($conn, $sql1);
+	while($rows = $result1->fetch_assoc()){
 
+		$suma = $suma + ($row["gramaj"] * $rows["calories"]) / 100;
+		
+	}
+	
+}
+$_SESSION['total_calorii'] = $suma;
+
+$sql2= "SELECT * from users WHERE email like '$email'";
+$result2 = mysqli_query($conn, $sql2);
+$greutate_ideala = 0;
+while($rowss = $result2->fetch_assoc()){
+	$greutate_ideala++;
+	//$greutate_ideala = $greutate_ideala + ();
+	$sql3= "SELECT * from myplans1 WHERE firstname like '$email'";
+	$result3 = mysqli_query($conn, $sql3);
+	while($rowsss = $result3->fetch_assoc()){
+		$gender = $rowsss["gender"];
+		
+	}
+		$greutate_ideala = ($greutate_ideala + (10 * $rowss["weight"] + 6.25 * $rowss["height"] - 5*$rowss["age"] + 5)) /100;
+	
+	
+
+		
+}
+
+$_SESSION['RBM'] = $greutate_ideala;
 ?>
 
 <!DOCTYPE html>
@@ -32,35 +71,28 @@ session_start();
 
 	<div class="container">
 		<div class="paragraphs">
-			<p>Name:</p>
-			<p>E-mail:</p>
-			<p>Password:</p>
-			<p>Motivation:</p>
-			<p>Weight:</p>
+			<p>Medie totala:</p>
+			<p>Sugestii exercitii:</p>
+			
+			<p>Rata Metabolica de Baza:</p>
+			
 		</div>
 		<div class="boxes">
-			<input type="text" name="name" value="MyName" readonly><br>
-			<input type="email" name="email" value="myemail@mail.com" readonly><br>
-			<input type="password" name="password" value="MyPassword" readonly><br>
-			<input type="text" name="motivation" value="MyMotivation" readonly><br>
-			<input type="number" name="weight" value="65" readonly><br>
+			<input type="text" name="name" value="<?php echo $_SESSION['total_calorii']; ?>" readonly><br>
+			<input type="email" name="email" value="<?php
+			 if($_SESSION['RBM'] > 1.2 && $_SESSION['RBM'] < 1.3) {echo " Munca sedentara si putine alte activitati"; } 
+			 else if($_SESSION['RBM'] > 1.3 && $_SESSION['RBM'] < 1.6) {echo " Munca in picioare sau exercitii usoare 1-3 zile pe saptamana"; }
+			 else if($_SESSION['RBM'] > 1.6 && $_SESSION['RBM'] < 1.8) {echo " Activitati zilnice moderate sau exercitii 5-6 zile pe saptamana" ;}
+			 else  {echo " Esti in forma tine-o tot asa";}
+			 
+			
+			?>" readonly><br>
+		
+			<input type="text" name="motivation" value="<?php echo $_SESSION['RBM'] ?>" readonly><br>
+		
 		</div>
-		<div class="buttonsave">
-			<input class="SaveButton" type="submit" value="Save" onclick="myFunction()">
-		</div>
-		<div class="editbutton">
-			<input class="EditButton" type="submit" value="Edit" onclick="myFunction1()">
-		</div>
-		<script>
-			function myFunction1()
-			{
-				document.getElementById("toedit").readOnly=false;
-			}
-			function myFunction()
-			{
-				document.getElementById("toedit").readOnly=true;
-			}
-		</script>
+	
+		
 	</div>
 	
 </body>
