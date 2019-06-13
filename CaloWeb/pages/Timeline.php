@@ -41,23 +41,17 @@ ini_set('memory_limit','16M');
       //$tot= mysqli_query($conn, $sql);
       //$nr_planuri=mysqli_fetch_assoc($tot);
       $count=0;
+      $planuri=array();
       while($row=mysqli_fetch_array($planuri_result))
       { 
         $count++;
-        
         $plan = stripslashes($row['tablename']);
+        array_push($planuri,$plan);
         $start_date = stripslashes($row['Sdate']);
         $emailplan=stripslashes($row['firstname']);
         $nr_days=stripslashes($row['days']);
         $gender=stripslashes($row['gender']);
         $restriction=stripslashes($row['restriction']);
-
-        if($count%7===1){
-         // echo '<div class="list"> <h4>'.$plan.':Week '. $count .'</h4> <ul>';
-
-        }
-
-
 
         $timeline="SELECT * from timeline where email like '$emailplan' and planname like '$plan'";
         $timeline_result= mysqli_query($conn, $timeline);
@@ -84,7 +78,9 @@ ini_set('memory_limit','16M');
                 $nr_calorii=intval($gramaj)*intval($cal_data['calories'])/100;
                 
                 $total_calorii += $nr_calorii;
-                echo '<li>Day '. $countdays . ': ' . date('Y-m-d',strtotime($start_date."+".$countdays." days")) . ' : '. $nr_calorii .'kcal</li>';
+                $nr=$countdays-1;
+                $hei=date('Y-m-d',strtotime($start_date."+".$nr." days"));
+                echo '<li>Day '. $countdays . ': ' . $hei . ' : '. $nr_calorii .'kcal</li>';
                 
       
                 }
@@ -96,7 +92,7 @@ ini_set('memory_limit','16M');
       
                 }
                 $media_saptamanii = 0;
-              if($i%7===0 || $i%5 === 0){
+                if($i%7===0 || $i%5 === 0||$i%6===0||$i%4===0||$i%3===0||$i%2===0||$i%1===0){
                     if(intval($countdays) > 0){
                     echo '</ul> <footer>Average week:'. $total_calorii/intval($countdays)   .'kcal</footer> </div>';
                     $media_saptamanii = $total_calorii/intval($countdays);
@@ -113,10 +109,7 @@ ini_set('memory_limit','16M');
               }
             }
         }
-
-
        
-
       ?>         		
   </div>  
   <div class="bg-modal">   
@@ -128,108 +121,71 @@ ini_set('memory_limit','16M');
             <th> Portion </th>
             <th> Calories </th>
           </tr>
-        
+<!--         
           <tr>
             <td> Food</td>
             <td> Portion </td>
             <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
+          </tr> -->
+        <?php
+        include_once '../scripts/config.php';
+          for($i=0;$i<count($planuri);$i++)
+          {
+            
+            $nume_plan=strval($planuri[$i]);
+            $sql_result=mysqli_query($conn,"SELECT * from timeline where email like '$email' and planname like '$nume_plan' order by days asc");
+            $count=0;
+            while($row=mysqli_fetch_array($sql_result))
+            {
+              $count++;
+              $foods=stripslashes($row['food']);
+              $qs=mysqli_query($conn,"SELECT calories from food where name like '$foods'");
+              $food_data=mysqli_fetch_assoc($qs);
 
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
+              $current_date=stripslashes($row['days']);
 
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-          
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-       
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
-        
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
+              $qsl=mysqli_query($conn,"SELECT Sdate from myplans1 where tablename like '$nume_plan' and firstname like '$email'");
+              $start_data=mysqli_fetch_assoc($qsl);
 
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr>
+              $final=$start_data['Sdate'];
+
+              echo '<tr>';
+              $final1=date('Y-m-d',strtotime($final."+".($count-1)." days"));
+
+
+              $pola=new DateTime($final1);
+              $result = $pola->format('Y-m-d');
+
+              $sql_result=mysqli_query($conn,"SELECT * from timeline where email like '$email' and planname like '$nume_plan' and days like '$result'");
+              while($rows=mysqli_fetch_array($sql_result))
+              {
+                
+                $food=stripslashes($rows['food']);
+                $gramaj=stripslashes($rows['gramaj']);
+                $current_date=stripslashes($rows['days']);
+                  if(strcmp($current_date,$result))
+                    {
+                    $calorii=intval($gramaj)*intval($food_data['calories'])/100;
+                    echo '<td>'.$food.'</td>';
+                    echo '<td>'.$gramaj.'</td>';
+                    echo '<td>'.$calorii.'</td>';
+                  }
+              }
+
+              if(strcmp($current_date,$result))
+              {
+                $calorii=intval($gramaj)*intval($food_data['calories'])/100;
+                echo '<td>'.$food.'</td>';
+                echo '<td>'.$gramaj.'</td>';
+                echo '<td>'.$calorii.'</td>';
+               }
+              echo '</tr>';
+              $count=0;
+            }
+          }
         
-        <tr>
-          <td> Food</td>
-          <td> Portion </td>
-          <td> Calories </td>
-        </tr>
         
-        <tr>
-          <td> Food</td>
-          <td> Portion </td>
-          <td> Calories </td>
-        </tr>
-        
-        <tr>
-          <td> Food</td>
-          <td> Portion </td>
-          <td> Calories </td>
-        </tr>
+        ?>
       </table>
       </div>
       <div class="container-buttons">
@@ -253,6 +209,10 @@ ini_set('memory_limit','16M');
         </div>
       </div>
     </div>
+  </div>
+
+  </div>
+      <div id="create-button" >Add</div>
   </div>
   <script>
     var list= document.querySelectorAll(".list ul li");
