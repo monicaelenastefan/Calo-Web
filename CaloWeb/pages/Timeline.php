@@ -74,14 +74,12 @@ ini_set('memory_limit','16M');
 
         $timeline="SELECT * from timeline where email like '$emailplan' and planname like '$plan'";
         $timeline_result= mysqli_query($conn, $timeline);
-        for($j = 1; $j <= $nr_days; $j++){
-          //if(empty(mysqli_fetch_array($timeline_result)))
-            //echo '<li>Day'.$j.'</li>';    
+        for($j = 1; $j <= $nr_days; $j++){   
             if($j%7 === 1){
               echo '<div class="list"> <h4>'.$plan.':Week '. intval($j/7 + 1) .'</h4> <ul>';
               $countdays=0;
               $total_calorii = 0;
-             
+              $prev=date('Y-m-d');
                 while($rowtl=mysqli_fetch_array($timeline_result))
                 { 
                
@@ -89,17 +87,53 @@ ini_set('memory_limit','16M');
                 $daytl = stripslashes($rowtl['days']);
                 $foodtl = stripslashes($rowtl['food']);
                 $gramaj = stripslashes($rowtl['gramaj']);
+
+                $sqln=mysqli_query($conn,"SELECT * FROM timeline where email like '$email' and planname like '$plan' and days like '$daytl'");
+                $suma_pe_zi=0;
+                while($row_d=mysqli_fetch_array($sqln))
+                {
+                  $cal="SELECT * from food where name like '$foodtl'";
+                  $calres= mysqli_query($conn, $cal);
+                  $cal_data=mysqli_fetch_assoc($calres);
+                  $nr=$countdays-1;
+                  $hei=date('Y-m-d',strtotime($start_date."+".$nr." days"));
+                  if($countdays==1)
+                  {
+                    $nr_calorii=intval($gramaj)*intval($cal_data['calories'])/100;
+                    //echo $nr_calorii;
+                    $suma_pe_zi+=$nr_calorii;
+                    
+                    $total_calorii += $nr_calorii;
+                  }
+                  if($countdays>1)
+                  {
+                    $nr_calorii=intval($gramaj)*intval($cal_data['calories'])/100;
+                    //echo $nr_calorii;
+                    $suma_pe_zi+=$nr_calorii;
+                    
+                    $total_calorii += $nr_calorii;
+                    
+                    //echo '<li>';
+                    if($prev==$hei)
+                    {
+                      $suma_pe_zi+=$nr_calorii;
+                      
+                      //echo '<li>Day '. $countdays . ': ' . $hei . ' : '. $suma_pe_zi .'kcal</li>';
+                    }
+                    else {
+                      if($prev!=$hei)
+                      {
+                        $suma_pe_zi=0;
+                        $prev=date('Y-m-d');
+                        //echo '</li>';
+                      }
+                    }
+                    
+                  }
+                  else {echo '<li>Day '. $countdays . ': ' . $hei . ' : '. $suma_pe_zi .'kcal</li>';}
+                  $prev=$hei;
+                }
       
-                $cal="SELECT * from food where name like '$foodtl'";
-                $calres= mysqli_query($conn, $cal);
-                $cal_data=mysqli_fetch_assoc($calres);
-                
-                $nr_calorii=intval($gramaj)*intval($cal_data['calories'])/100;
-                
-                $total_calorii += $nr_calorii;
-                $nr=$countdays-1;
-                $hei=date('Y-m-d',strtotime($start_date."+".$nr." days"));
-                echo '<li>Day '. $countdays . ': ' . $hei . ' : '. $nr_calorii .'kcal</li>';
                 
       
                 }
@@ -122,8 +156,9 @@ ini_set('memory_limit','16M');
                   }
                 }
                 $count = 0;
-               
+               $countdays=0;
               }
+              $countdays=0;
             }
         }
        
