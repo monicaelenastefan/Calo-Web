@@ -10,6 +10,7 @@ ini_set('memory_limit','16M');
 	<title>Calo'Web</title>
 	<meta charset="UTF-8">
   <link rel="stylesheet" href="../css/Timeline.css">
+  <link rel="stylesheet" href="../css/MyPlans.css">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
 </head>
 
@@ -27,7 +28,25 @@ ini_set('memory_limit','16M');
       </nav>
     </div>
   </header>	
-
+ 
+    
+    <div class="container-create-button">
+    <div>
+    <?php
+        
+        if(@$_GET['signup']==true)
+        {
+        ?>
+           <div  class="notification"> <?php echo $_GET['signup'] ?> 
+           </div>
+        <?php
+        }
+        
+        ?>
+    </div>
+      <div id="create-button" >Create Plan</div>
+    </div>
+    
   <div class="lists" id="CevaNou"> 
       <?php
       include_once '../scripts/config.php';
@@ -103,99 +122,38 @@ ini_set('memory_limit','16M');
                   }
                 }
                 $count = 0;
-                if($media_saptamanii < 600){
-                  echo '<div class="">chestie</div>';
-                }
+               
               }
             }
         }
        
       ?>         		
   </div>  
-  <div class="bg-modal">   
-    <div class="modal-content"> 
-      <div class="food-list">
-        <table id="food">
-          <tr>
-            <th> Food</th>
-            <th> Portion </th>
-            <th> Calories </th>
-          </tr>
-<!--         
-          <tr>
-            <td> Food</td>
-            <td> Portion </td>
-            <td> Calories </td>
-          </tr> -->
-        <?php
-        include_once '../scripts/config.php';
-          for($i=0;$i<count($planuri);$i++)
-          {
-            
-            $nume_plan=strval($planuri[$i]);
-            $sql_result=mysqli_query($conn,"SELECT * from timeline where email like '$email' and planname like '$nume_plan' order by days asc");
-            $count=0;
-            while($row=mysqli_fetch_array($sql_result))
-            {
-              $count++;
-              $foods=stripslashes($row['food']);
-              $qs=mysqli_query($conn,"SELECT calories from food where name like '$foods'");
-              $food_data=mysqli_fetch_assoc($qs);
+  <form action="../scripts/finalstuff.php" method="get">
 
-              $current_date=stripslashes($row['days']);
+<div class="bg-modal">   
+  <div class="modal-content"> 
+    <div class="container-form">
+    <div class="input_data">
+      <label for="name">Plan Name</label>
+      <input type="text" id="name" name="Name" placeholder="Sample..">
 
-              $qsl=mysqli_query($conn,"SELECT Sdate from myplans1 where tablename like '$nume_plan' and firstname like '$email'");
-              $start_data=mysqli_fetch_assoc($qsl);
+      <label for="name">Food</label>
+      <input type="text" id="name" name="Name1" placeholder="Sample..">
 
-              $final=$start_data['Sdate'];
+      <label for="name">Gramaj</label>
+      <input type="text" id="name" name="Name2" placeholder="Sample..">
 
-              echo '<tr>';
-              $final1=date('Y-m-d',strtotime($final."+".($count-1)." days"));
+  
+    
+      <input type="submit" name="submit" value="CREATE" class="CreateButton" onclick="myFunction();" />
+    </form>
+    <div class="close">+</div>  
 
 
-              $pola=new DateTime($final1);
-              $result = $pola->format('Y-m-d');
 
-              $sql_result=mysqli_query($conn,"SELECT * from timeline where email like '$email' and planname like '$nume_plan' and days like '$result'");
-              while($rows=mysqli_fetch_array($sql_result))
-              {
-                
-                $food=stripslashes($rows['food']);
-                $gramaj=stripslashes($rows['gramaj']);
-                $current_date=stripslashes($rows['days']);
-                  if(strcmp($current_date,$result))
-                    {
-                    $calorii=intval($gramaj)*intval($food_data['calories'])/100;
-                    echo '<td>'.$food.'</td>';
-                    echo '<td>'.$gramaj.'</td>';
-                    echo '<td>'.$calorii.'</td>';
-                  }
-              }
 
-              if(strcmp($current_date,$result))
-              {
-                $calorii=intval($gramaj)*intval($food_data['calories'])/100;
-                echo '<td>'.$food.'</td>';
-                echo '<td>'.$gramaj.'</td>';
-                echo '<td>'.$calorii.'</td>';
-               }
-              echo '</tr>';
-              $count=0;
-            }
-          }
-        
-        
-        ?>
-      </table>
-      </div>
-      <div class="container-buttons">
-        <div id="add">Add </div>
-        <div class="aec-button">Edit </div>
-        <div class="aec-button">Delete </div>
-      </div>
-      <div class="close">+</div>
-    </div>  
-  </div>   
+    
   <div class="add-item-modal">
     <div class="modal-content"> 
       <div class="border">
@@ -211,31 +169,57 @@ ini_set('memory_limit','16M');
     </div>
   </div>
 
-  </div>
-      <div id="create-button" >Add</div>
-  </div>
+ 
   <script>
-    var list= document.querySelectorAll(".list ul li");
+    var list= document.getElementById("create-button");
     tab= [];
-    for (var i = 0 ; i < list.length; i++) {
-      console.log("test");
-      list[i].addEventListener('click', function() {
-        document.querySelector('.bg-modal').style.display= 'flex'; 
-      });
-      document.querySelector('.close').addEventListener('click', 
-      function(){
-        document.querySelector('.bg-modal').style.display= 'none'; 
-      });
-   } 
-  
-    var el=document.getElementById("add");
-    el.addEventListener('click', function() {  
-      document.querySelector('.add-item-modal').style.display= 'flex'; 
+   
+    console.log("test");
+    list.addEventListener('click', function() {
+      document.querySelector('.bg-modal').style.display= 'flex'; 
     });
-    document.querySelector('#ex-button').addEventListener('click', 
+    document.querySelector('.close').addEventListener('click', 
     function(){
-    document.querySelector('.add-item-modal').style.display= 'none';
+      document.querySelector('.bg-modal').style.display= 'none';
+    });
+
+    var plan=document.querySelectorAll(".plan");
+    
+   for ( var i = 0; i< plan.length ; i++){
+      plan[i].addEventListener('click', function() {
+        document.querySelector('.plan-modal').style.display= 'flex'; 
+      });
+    }   
+      document.querySelector('.close-plan').addEventListener('click', 
+      function(){
+        document.querySelector('.plan-modal').style.display= 'none';
     });
   </script>
+<!-- 
+<script>
+    var list= document.getElementById("create-button-delete");
+    tab= [];
+   
+    console.log("test");
+    list.addEventListener('click', function() {
+      document.querySelector('.bg-modal').style.display= 'flex'; 
+    });
+    document.querySelector('.close').addEventListener('click', 
+    function(){
+      document.querySelector('.bg-modal').style.display= 'none';
+    });
+
+    var plan=document.querySelectorAll(".plan");
+    
+   for ( var i = 0; i< plan.length ; i++){
+      plan[i].addEventListener('click', function() {
+        document.querySelector('.plan-modal').style.display= 'flex'; 
+      });
+    }   
+      document.querySelector('.close-plan').addEventListener('click', 
+      function(){
+        document.querySelector('.plan-modal').style.display= 'none';
+    });
+  </script> -->
 </body>
 </html>

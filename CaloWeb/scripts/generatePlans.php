@@ -60,7 +60,7 @@
         
         $Height1 = $Height[0];
         $Height1 = mysqli_real_escape_string($conn, $Height1);
-        //echo $Height['height'];
+        echo $Height['height'];
         echo '<br>';
     
         $sql = "SELECT weight FROM users WHERE firstname like '$temp'";
@@ -92,6 +92,7 @@
     else{
         $sql = "INSERT INTO myplans1 (tablename, firstname, ageI, height ,weight, days, activity, gender, Sdate, Ktolose, age, Cweight, restriction) VALUE ('$Name', '$FirstName1', '$Age1', '$Height1', '$Weight1', '$Days', '$Color', '$Colors', '$StartDate', '$Kilograms', '$Age', '$CurentWeight', '$Colors1');";
         mysqli_query($conn, $sql);
+        echo $Name;
         header("Location: /pages/MyPlans.php?signup= Plan create successfuly!");
         exit();
     }
