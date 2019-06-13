@@ -89,7 +89,14 @@
 
         exit();
     }
-    else{
+    else
+    {
+        if(!empty(mysqli_fetch_array(mysqli_query($conn,"SELECT * from myplans1 where tablename like '$Name'"))))
+        {
+            header("Location: /pages/MyPlans.php?signup= This plan already exists! Change name!");
+            exit();
+        }
+
         $sql = "INSERT INTO myplans1 (tablename, firstname, ageI, height ,weight, days, activity, gender, Sdate, Ktolose, age, Cweight, restriction) VALUE ('$Name', '$FirstName1', '$Age1', '$Height1', '$Weight1', '$Days', '$Color', '$Colors', '$StartDate', '$Kilograms', '$Age', '$CurentWeight', '$Colors1');";
         mysqli_query($conn, $sql);
         echo $Name;

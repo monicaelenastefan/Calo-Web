@@ -12,7 +12,7 @@
         echo $Food;
         echo $Gramaj;
 
-        echo $_SESSION['u_email'];
+        $email=$_SESSION['u_email'];
 
 
         // echo $Weight['weight'];
@@ -55,13 +55,38 @@
                 }
                 else
                 {
-                    $email =  $_SESSION['u_email'];
-                    $date = date("Y-m-d");
-                    $sql = "INSERT INTO timeline (email, days, food, gramaj ,planname) VALUE ('$email', '$date', '$Food', '$Gramaj', '$Name');";
-                    mysqli_query($conn, $sql);
-                    header("Location: /pages/Timeline.php?signup= Added successfully!");
-                    exit();
+                    $start = mysqli_fetch_array(mysqli_query($conn,"SELECT Sdate from myplans1 where tablename like '$Name' and firstname like '$email'"));
+                    $start1 = $start['Sdate'];
+                    $azi=new DateTime(date("Y-m-d"));
+                    $startd=new DateTime($start1);
+                    if( $azi <  $startd)
+                    {
+                        header("Location: /pages/Timeline.php?signup=Your plan did not start yet!");
+                        exit();
+                    }
+                    else
+                    {
+                        $s = mysqli_fetch_array(mysqli_query($conn,"SELECT days from myplans1 where tablename like '$Name' and firstname like '$email'"));
+                        $sd=$s['days'];
+                        $hei=date("Y-m-d",strtotime($startd."+".$sd." days"));
+                        $ultimazi=new DateTime($hei);
+                        if($azi>$ultimazi)
+                        {
+                            header("Location: /pages/Timeline.php?signup= Your plan expired!");
+                            exit();
+                        }
+                        else
+                        {
+                            $email =  $_SESSION['u_email'];
+                            $date = date("Y-m-d");
+                            $sql = "INSERT INTO timeline (email, days, food, gramaj ,planname) VALUE ('$email', '$date', '$Food', '$Gramaj', '$Name');";
+                            mysqli_query($conn, $sql);
+                            header("Location: /pages/Timeline.php?signup= Added successfully!");
+                            exit();
+                        }
+                    }
                 }
+                
             }
         }
         
