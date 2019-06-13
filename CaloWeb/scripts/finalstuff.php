@@ -27,20 +27,44 @@
     // // header("Location: MyPlans.php?Plan=success");
     
 //===================================================
-    if (empty($Name) || empty($Food) || empty($Gramaj)){
-        
-        // header("Location: ../pages/MyPlans.php?Plan=success");
+    if (empty($Name) || empty($Food) || empty($Gramaj))
+    {
         header("Location: /pages/Timeline.php?signup= Please fill in the blanks!");
-        
         exit();
     }
-    else{
-        $email =  $_SESSION['u_email'];
-        $date = date("Y-m-d");
-        $sql = "INSERT INTO timeline (email, days, food, gramaj ,planname) VALUE ('$email', '$date', '$Food', '$Gramaj', '$Name');";
-        mysqli_query($conn, $sql);
-        header("Location: /pages/Timeline.php?signup= Plan create successfuly!");
-        exit();
+    else
+    {
+        if(empty(mysqli_fetch_array(mysqli_query($conn,"SELECT * from food where name like '$Food'"))))
+        {
+            header("Location: /pages/Timeline.php?signup= No such food!");
+            exit();
+        }
+        else 
+        {
+            if(empty(mysqli_fetch_array(mysqli_query($conn,"SELECT * from myplans1 where tablename like '$Name'"))))
+            {
+                header("Location: /pages/Timeline.php?signup=There is no plan with this name!");
+                exit();
+            }
+            else 
+            {
+                if(!is_numeric($Gramaj))
+                {
+                    header("Location: /pages/Timeline.php?signup=Portion is not a number!");
+                    exit();
+                }
+                else
+                {
+                    $email =  $_SESSION['u_email'];
+                    $date = date("Y-m-d");
+                    $sql = "INSERT INTO timeline (email, days, food, gramaj ,planname) VALUE ('$email', '$date', '$Food', '$Gramaj', '$Name');";
+                    mysqli_query($conn, $sql);
+                    header("Location: /pages/Timeline.php?signup= Added successfully!");
+                    exit();
+                }
+            }
+        }
+        
     }
     
 

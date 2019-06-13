@@ -44,7 +44,7 @@ ini_set('memory_limit','16M');
         
         ?>
     </div>
-      <div id="create-button" >Create Plan</div>
+      <div id="create-button" >Add Today</div>
     </div>
     
   <div class="lists" id="CevaNou"> 
@@ -176,7 +176,7 @@ ini_set('memory_limit','16M');
       <label for="name">Food</label>
       <input type="text" id="name" name="Name1" placeholder="Sample..">
 
-      <label for="name">Gramaj</label>
+      <label for="name">Portion</label>
       <input type="text" id="name" name="Name2" placeholder="Sample..">
 
   
@@ -185,24 +185,6 @@ ini_set('memory_limit','16M');
     </form>
     <div class="close">+</div>  
 
-
-
-
-    
-  <div class="add-item-modal">
-    <div class="modal-content"> 
-      <div class="border">
-        <div class="container-field">Search for aliment: </div>
-        <input type="text" placeholder="Search..">
-        <div class="container-field"> <label for="portion">Portion size in grams: </label>
-        <input type="number" id="portion" name="portion" min="0" max="5000"> </div>
-        <div class="container-buttons-add"> 
-          <div id="save"> Save</div>
-          <div id="ex-button">Close </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
  
   <script>
@@ -230,31 +212,5 @@ ini_set('memory_limit','16M');
         document.querySelector('.plan-modal').style.display= 'none';
     });
   </script>
-<!-- 
-<script>
-    var list= document.getElementById("create-button-delete");
-    tab= [];
-   
-    console.log("test");
-    list.addEventListener('click', function() {
-      document.querySelector('.bg-modal').style.display= 'flex'; 
-    });
-    document.querySelector('.close').addEventListener('click', 
-    function(){
-      document.querySelector('.bg-modal').style.display= 'none';
-    });
-
-    var plan=document.querySelectorAll(".plan");
-    
-   for ( var i = 0; i< plan.length ; i++){
-      plan[i].addEventListener('click', function() {
-        document.querySelector('.plan-modal').style.display= 'flex'; 
-      });
-    }   
-      document.querySelector('.close-plan').addEventListener('click', 
-      function(){
-        document.querySelector('.plan-modal').style.display= 'none';
-    });
-  </script> -->
 </body>
 </html>
